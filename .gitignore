@@ -1,0 +1,11 @@
+node_modules/*
+js/
+build/
+css/style.css
+css/vendor.css
+tests/integration/vendor/
+tests/integration/composer.lock
+tests/.phpunit.result.cache
+vendor/
+.php_cs.cache
+\.idea/

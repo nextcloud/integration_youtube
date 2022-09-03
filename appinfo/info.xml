@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<info>
+	<id>integration_youtube</id>
+	<name>Youtube integration</name>
+	<summary>Youtube integration</summary>
+	<description><![CDATA[Youtube integration]]></description>
+	<version>0.1.0</version>
+	<licence>agpl</licence>
+	<author>Julius Härtl</author>
+	<namespace>IntegrationYoutube</namespace>
+	<category>integration</category>
+	<website>https://github.com/juliushaertl/integration_youtube</website>
+	<bugs>https://github.com/juliushaertl/integration_youtube/issues</bugs>
+	<dependencies>
+		<nextcloud min-version="25" max-version="25"/>
+	</dependencies>
+</info>
