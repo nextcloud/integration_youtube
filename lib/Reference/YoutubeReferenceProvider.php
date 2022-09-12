@@ -23,10 +23,11 @@
 namespace OCA\IntegrationYoutube\Reference;
 
 use OC\Collaboration\Reference\LinkReferenceProvider;
+use OC\Collaboration\Reference\Reference;
 use OCP\Collaboration\Reference\IReference;
+use OCP\Collaboration\Reference\IReferenceProvider;
 
-class YoutubeReferenceProvider implements \OCP\Collaboration\Reference\IReferenceProvider {
-	private LinkReferenceProvider $linkReferenceProvider;
+class YoutubeReferenceProvider implements IReferenceProvider {
 
 	public function __construct(LinkReferenceProvider $linkReferenceProvider) {
 		$this->linkReferenceProvider = $linkReferenceProvider;
@@ -47,7 +48,7 @@ class YoutubeReferenceProvider implements \OCP\Collaboration\Reference\IReferenc
 	 */
 	public function resolveReference(string $referenceText): ?IReference {
 		if ($this->matchReference($referenceText)) {
-			$reference = $this->linkReferenceProvider->resolveReference($referenceText);
+			$reference = new Reference($referenceText);
 			$reference->setRichObject('integration_youtube', [
 				'videoId' => $this->getVideoId($referenceText),
 			]);

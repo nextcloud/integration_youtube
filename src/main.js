@@ -24,6 +24,10 @@ import Vue from 'vue'
 import Youtube from './Youtube.vue'
 
 registerWidget('integration_youtube', (el, { richObjectType, richObject, accessible }) => {
+	// trick to change the wrapper element style
+	el.parentNode.style['width'] = '560px'
+	el.parentNode.style['margin-left'] = '0'
+	el.parentNode.style['margin-right'] = '0'
 	const Widget = Vue.extend(Youtube)
 	new Widget({
 		propsData: {
