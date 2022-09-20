@@ -7,7 +7,7 @@
 /.editorconfig
 /.eslintrc.js
 /.nextcloudignore
-/webpack.*.js
+/webpack.js
 /.codecov.yml
 /composer.json
 /composer.lock
@@ -17,6 +17,10 @@
 /.eslintignore
 /.eslintrc.yml
 /.gitignore
+/.l10nignore
+/stylelint.config.js
+/.php-cs-fixer.dist.php
+/.php-cs-fixer.cache
 /issue_template.md
 /krankerl.toml
 /Makefile
