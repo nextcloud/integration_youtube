@@ -1,3 +1,9 @@
+## 0.1.2
+
+### Fixed
+
+- fix: Make sure to consider any youtube like a reference
+
 ## 0.1.1
 
 ### Dependencies
