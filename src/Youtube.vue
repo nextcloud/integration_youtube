@@ -20,7 +20,7 @@
   -->
 
 <template>
-	<iframe width="560"
+	<iframe width="100%"
 		height="315"
 		:src="youtubeEmbed"
 		frameborder="0"

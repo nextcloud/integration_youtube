@@ -36,7 +36,7 @@ class YoutubeReferenceProvider implements \OCP\Collaboration\Reference\IReferenc
 	 * @inheritDoc
 	 */
 	public function matchReference(string $referenceText): bool {
-		return $this->getVideoId($referenceText) !== null);
+		return $this->getVideoId($referenceText) !== null;
 	}
 
 	/**
