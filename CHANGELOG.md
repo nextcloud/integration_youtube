@@ -1,3 +1,13 @@
+## 0.1.3
+
+### Added
+
+- Nextcloud 26 compatibility
+
+### Fixed
+
+- fix: Fix regression when matching links
+
 ## 0.1.2
 
 ### Fixed
