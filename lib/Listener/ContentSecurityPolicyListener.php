@@ -37,7 +37,7 @@ class ContentSecurityPolicyListener implements \OCP\EventDispatcher\IEventListen
 		}
 
 		$policy = new ContentSecurityPolicy();
-		$policy->addAllowedFrameDomain('https://www.youtube.com');
+		$policy->addAllowedFrameDomain('https://www.youtube-nocookie.com');
 		$event->addPolicy($policy);
 	}
 }

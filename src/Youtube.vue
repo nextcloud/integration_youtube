@@ -39,7 +39,7 @@ export default {
 	},
 	computed: {
 		youtubeEmbed() {
-			return 'https://www.youtube.com/embed/' + this?.richObject?.videoId
+			return 'https://www.youtube-nocookie.com/embed/' + this?.richObject?.videoId
 		},
 	},
 }
