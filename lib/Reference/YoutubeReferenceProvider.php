@@ -22,14 +22,48 @@
 
 namespace OCA\IntegrationYoutube\Reference;
 
-use OC\Collaboration\Reference\LinkReferenceProvider;
+use Fusonic\OpenGraph\Consumer;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\LimitStream;
+use GuzzleHttp\Psr7\Utils;
 use OCP\Collaboration\Reference\IReference;
+use OCP\Collaboration\Reference\IReferenceProvider;
+use OCP\Collaboration\Reference\Reference;
+use OCP\Files\AppData\IAppDataFactory;
+use OCP\Files\NotFoundException;
+use OCP\Http\Client\IClientService;
+use OCP\IURLGenerator;
+use Psr\Log\LoggerInterface;
 
-class YoutubeReferenceProvider implements \OCP\Collaboration\Reference\IReferenceProvider {
-	private LinkReferenceProvider $linkReferenceProvider;
+class YoutubeReferenceProvider implements IReferenceProvider {
 
-	public function __construct(LinkReferenceProvider $linkReferenceProvider) {
-		$this->linkReferenceProvider = $linkReferenceProvider;
+	/* 5 MiB; for image size and webpage header */
+	private const MAX_CONTENT_LENGTH = 5 * 1024 * 1024;
+
+	private const ALLOWED_CONTENT_TYPES = [
+		'image/png',
+		'image/jpg',
+		'image/jpeg',
+		'image/gif',
+		'image/svg+xml',
+		'image/webp'
+	];
+
+	private IAppDataFactory $appDataFactory;
+	private IClientService $clientService;
+	private IURLGenerator $urlGenerator;
+	private LoggerInterface $logger;
+
+	public function __construct(
+		IAppDataFactory $appDataFactory,
+		IClientService $clientService,
+		IURLGenerator $urlGenerator,
+		LoggerInterface $logger,
+	) {
+		$this->appDataFactory = $appDataFactory;
+		$this->clientService = $clientService;
+		$this->urlGenerator = $urlGenerator;
+		$this->logger = $logger;
 	}
 
 	/**
@@ -44,7 +78,8 @@ class YoutubeReferenceProvider implements \OCP\Collaboration\Reference\IReferenc
 	 */
 	public function resolveReference(string $referenceText): ?IReference {
 		if ($this->matchReference($referenceText)) {
-			$reference = $this->linkReferenceProvider->resolveReference($referenceText);
+			$reference = new Reference($referenceText);
+			$this->populateReferenceOpengraph($reference);
 			$reference->setRichObject('integration_youtube', [
 				'videoId' => $this->getVideoId($referenceText),
 			]);
@@ -52,6 +87,88 @@ class YoutubeReferenceProvider implements \OCP\Collaboration\Reference\IReferenc
 		}
 
 		return null;
+	}
+
+	private function populateReferenceOpengraph(Reference $reference): void {
+		$client = $this->clientService->newClient();
+		try {
+			$headResponse = $client->head($reference->getId(), [ 'timeout' => 10 ]);
+		} catch (\Exception $e) {
+			$this->logger->debug('Failed to perform HEAD request to get target metadata', ['exception' => $e]);
+			return;
+		}
+
+		$linkContentLength = $headResponse->getHeader('Content-Length');
+		if (is_numeric($linkContentLength) && (int) $linkContentLength > self::MAX_CONTENT_LENGTH) {
+			$this->logger->debug('Skip resolving links pointing to content length > 5 MiB');
+			return;
+		}
+
+		$linkContentType = $headResponse->getHeader('Content-Type');
+		$expectedContentTypeRegex = '/^text\/html;?/i';
+
+		// check the header begins with the expected content type
+		if (!preg_match($expectedContentTypeRegex, $linkContentType)) {
+			$this->logger->debug('Skip resolving links pointing to content type that is not "text/html"');
+			return;
+		}
+
+		try {
+			$response = $client->get($reference->getId(), [ 'timeout' => 10 ]);
+		} catch (\Exception $e) {
+			$this->logger->debug('Failed to fetch link for obtaining open graph data', ['exception' => $e]);
+			return;
+		}
+
+		$responseBody = (string)$response->getBody();
+
+		// OpenGraph handling
+		$consumer = new Consumer();
+		$consumer->useFallbackMode = true;
+		$object = $consumer->loadHtml($responseBody);
+
+		$reference->setUrl($reference->getId());
+
+		if ($object->title) {
+			$reference->setTitle($object->title);
+		}
+
+		if ($object->description) {
+			$reference->setDescription($object->description);
+		}
+
+		if ($object->images) {
+			try {
+				$host = parse_url($object->images[0]->url, PHP_URL_HOST);
+				if ($host === false || $host === null) {
+					$this->logger->warning('Could not detect host of open graph image URI for ' . $reference->getId());
+					return;
+				}
+
+				$appData = $this->appDataFactory->get('core');
+				try {
+					$folder = $appData->getFolder('opengraph');
+				} catch (NotFoundException $e) {
+					$folder = $appData->newFolder('opengraph');
+				}
+
+				$response = $client->get($object->images[0]->url, ['timeout' => 10]);
+				$contentType = $response->getHeader('Content-Type');
+				$contentLength = $response->getHeader('Content-Length');
+
+				if (in_array($contentType, self::ALLOWED_CONTENT_TYPES, true) && $contentLength < self::MAX_CONTENT_LENGTH) {
+					$stream = Utils::streamFor($response->getBody());
+					$bodyStream = new LimitStream($stream, self::MAX_CONTENT_LENGTH, 0);
+					$reference->setImageContentType($contentType);
+					$folder->newFile(md5($reference->getId()), $bodyStream->getContents());
+					$reference->setImageUrl($this->urlGenerator->linkToRouteAbsolute('core.Reference.preview', ['referenceId' => md5($reference->getId())]));
+				}
+			} catch (GuzzleException $e) {
+				$this->logger->info('Failed to fetch and store the open graph image for ' . $reference->getId(), ['exception' => $e]);
+			} catch (\Throwable $e) {
+				$this->logger->error('Failed to fetch and store the open graph image for ' . $reference->getId(), ['exception' => $e]);
+			}
+		}
 	}
 
 	private function getVideoId(string $url): ?string {
