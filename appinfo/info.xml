@@ -9,8 +9,8 @@
 	<author>Julius Härtl</author>
 	<namespace>IntegrationYoutube</namespace>
 	<category>integration</category>
-	<website>https://github.com/juliushaertl/integration_youtube</website>
-	<bugs>https://github.com/juliushaertl/integration_youtube/issues</bugs>
+	<website>https://github.com/nextcloud/integration_youtube</website>
+	<bugs>https://github.com/nextcloud/integration_youtube/issues</bugs>
 	<dependencies>
 		<nextcloud min-version="25" max-version="28"/>
 	</dependencies>
