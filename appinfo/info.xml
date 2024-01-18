@@ -12,6 +12,6 @@
 	<website>https://github.com/nextcloud/integration_youtube</website>
 	<bugs>https://github.com/nextcloud/integration_youtube/issues</bugs>
 	<dependencies>
-		<nextcloud min-version="25" max-version="28"/>
+		<nextcloud min-version="25" max-version="29"/>
 	</dependencies>
 </info>

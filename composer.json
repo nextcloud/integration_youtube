@@ -1,12 +1,13 @@
 {
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
-		"christophwurst/nextcloud": "dev-master",
-		"phpunit/phpunit": "^9",
-		"nextcloud/coding-standard": "^1.0.0",
-		"symfony/event-dispatcher": "^4.0",
-		"vimeo/psalm": "^4.3",
-		"php-parallel-lint/php-parallel-lint": "^1.2"
+		"nextcloud/ocp": "dev-master",
+		"nextcloud/coding-standard": "^1.1",
+		"friendsofphp/php-cs-fixer": "^3.38",
+		"php-parallel-lint/php-parallel-lint": "^1.2",
+		"fusonic/opengraph": "^2.2",
+		"guzzlehttp/guzzle": "^7.5.0",
+		"psalm/phar": "^5.19"
 	},
 	"config": {
 		"optimize-autoloader": true,
@@ -15,15 +16,20 @@
 			"composer/package-versions-deprecated": true
 		},
 		"platform": {
-			"php": "7.4"
+			"php": "8.0"
 		}
 	},
 	"scripts": {
-		"lint": "find . -name \\*.php -not -path './vendor/*' -print0 | xargs -0 -n1 php -l",
+		"lint": "parallel-lint --exclude vendor .",
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
-		"psalm": "psalm",
-		"psalm:update-baseline": "psalm --update-baseline",
-		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MismatchingDocblockParamType,MismatchingDocblockReturnType,MissingParamType,InvalidFalsableReturnType"
+		"psalm": "psalm.phar",
+		"psalm:ci": "psalm.phar --threads=1",
+		"psalm:clear": "psalm.phar --clear-cache && psalm.phar --clear-global-cache",
+		"psalm:update-baseline": "psalm.phar --update-baseline",
+		"psalm:fix": "psalm.phar --alter --issues=InvalidReturnType,InvalidNullableReturnType,MismatchingDocblockParamType,MismatchingDocblockReturnType,MissingParamType,InvalidFalsableReturnType"
+	},
+	"require": {
+		"php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3"
 	}
 }

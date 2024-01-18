@@ -24,9 +24,13 @@ namespace OCA\IntegrationYoutube\Listener;
 
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\EventDispatcher\Event;
+use OCP\EventDispatcher\IEventListener;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
-class ContentSecurityPolicyListener implements \OCP\EventDispatcher\IEventListener {
+/**
+ * @template-implements IEventListener<Event>
+ */
+class ContentSecurityPolicyListener implements IEventListener {
 
 	/**
 	 * @inheritDoc
