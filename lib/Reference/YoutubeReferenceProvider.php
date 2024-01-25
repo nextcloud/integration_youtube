@@ -26,16 +26,19 @@ use Fusonic\OpenGraph\Consumer;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\LimitStream;
 use GuzzleHttp\Psr7\Utils;
+use OCA\IntegrationYoutube\AppInfo\Application;
+use OCP\Collaboration\Reference\ADiscoverableReferenceProvider;
 use OCP\Collaboration\Reference\IReference;
-use OCP\Collaboration\Reference\IReferenceProvider;
+use OCP\Collaboration\Reference\ISearchableReferenceProvider;
 use OCP\Collaboration\Reference\Reference;
 use OCP\Files\AppData\IAppDataFactory;
 use OCP\Files\NotFoundException;
 use OCP\Http\Client\IClientService;
+use OCP\IL10N;
 use OCP\IURLGenerator;
 use Psr\Log\LoggerInterface;
 
-class YoutubeReferenceProvider implements IReferenceProvider {
+class YoutubeReferenceProvider extends ADiscoverableReferenceProvider implements ISearchableReferenceProvider {
 
 	/* 5 MiB; for image size and webpage header */
 	private const MAX_CONTENT_LENGTH = 5 * 1024 * 1024;
@@ -53,17 +56,57 @@ class YoutubeReferenceProvider implements IReferenceProvider {
 	private IClientService $clientService;
 	private IURLGenerator $urlGenerator;
 	private LoggerInterface $logger;
+	private IL10N $l10n;
 
 	public function __construct(
 		IAppDataFactory $appDataFactory,
 		IClientService $clientService,
 		IURLGenerator $urlGenerator,
 		LoggerInterface $logger,
+		IL10N $l10n,
 	) {
 		$this->appDataFactory = $appDataFactory;
 		$this->clientService = $clientService;
 		$this->urlGenerator = $urlGenerator;
 		$this->logger = $logger;
+		$this->l10n = $l10n;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getId(): string {
+		return 'integration-youtube';
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getTitle(): string {
+		return $this->l10n->t('Youtube Link');
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getOrder(): int {
+		return 10;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getIconUrl(): string {
+		return $this->urlGenerator->getAbsoluteURL(
+			$this->urlGenerator->imagePath(Application::APP_ID, 'app-dark.svg')
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getSupportedSearchProviderIds(): array {
+		return ['youtube-video-search', 'youtube-channel-search', 'youtube-playlist-search'];
 	}
 
 	/**

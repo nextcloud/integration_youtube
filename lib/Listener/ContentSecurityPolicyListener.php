@@ -42,6 +42,8 @@ class ContentSecurityPolicyListener implements IEventListener {
 
 		$policy = new ContentSecurityPolicy();
 		$policy->addAllowedFrameDomain('https://www.youtube-nocookie.com');
+		$policy->addAllowedImageDomain('https://i.ytimg.com'); // video thumbnails
+		$policy->addAllowedImageDomain('https://yt3.ggpht.com'); // channel thumbnails
 		$event->addPolicy($policy);
 	}
 }

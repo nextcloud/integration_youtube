@@ -19,12 +19,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { registerWidget } from '@nextcloud/vue-richtext'
+import { registerWidget } from '@nextcloud/vue/dist/Components/NcRichText.js'
+import { linkTo } from '@nextcloud/router'
+import { getRequestToken } from '@nextcloud/auth'
 import Vue from 'vue'
-import Youtube from './Youtube.vue'
 
-registerWidget('integration_youtube', (el, { richObjectType, richObject, accessible }) => {
-	const Widget = Vue.extend(Youtube)
+__webpack_nonce__ = btoa(getRequestToken()) // eslint-disable-line
+__webpack_public_path__ = linkTo('integration_youtube', 'js/') // eslint-disable-line
+
+registerWidget('integration_youtube', async (el, { richObjectType, richObject, accessible }) => {
+	const { default: YtIframe } = await import(/* webpackChunkName: "integration-youtube-iframe-lazy" */'./views/Youtube.vue')
+	const Widget = Vue.extend(YtIframe)
 	new Widget({
 		propsData: {
 			richObjectType,
