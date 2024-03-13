@@ -14,9 +14,6 @@
 		"classmap-authoritative": true,
 		"allow-plugins": {
 			"composer/package-versions-deprecated": true
-		},
-		"platform": {
-			"php": "8.0"
 		}
 	},
 	"scripts": {

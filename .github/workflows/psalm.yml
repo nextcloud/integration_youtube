@@ -19,11 +19,12 @@ jobs:
       fail-fast: false
       matrix:
         ocp-version: [ 'dev-master', '^28', '^27', '^26' ]
-        php-version: [ '8.0', '8.1' ]
+        php-version: [ '8.0', '8.1', '8.2', '8.3' ]
         include:
-          - php-version: [ '8.2', '8.3' ]
-          - php-version: '7.4'
-            ocp-version: [ '^27', '^26' ]
+          - ocp-version: '^27'
+            php-version: '7.4'
+          - ocp-version: '^26'
+            php-version: '7.4'
 
     name: Nextcloud ${{ matrix.ocp-version }}
     steps:
@@ -39,10 +40,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Adjust composer platform requirements for php 7.4
+      - name: Adjust composer for php 7.4
         if: ${{ matrix.php-version == '7.4' }}
         run: |
-          sed -i 's/"php": "8.0"/"php": "7.4"/' composer.json
+          sed -i "s;nextcloud\/ocp\": \"dev-master\";nextcloud\/ocp\": \"${{ matrix.ocp-version }}\";" composer.json
           rm composer.lock
 
       - name: Install dependencies
