@@ -1,8 +1,8 @@
 <?php
 /**
- * @copyright Copyright (c) 2022 Julius Härtl <jus@bitgrid.net>
+ * @copyright Copyright (c) 2024 Anupam Kumar <kyteinsky@gmail.com>
  *
- * @author Julius Härtl <jus@bitgrid.net>
+ * @author Anupam Kumar <kyteinsky@gmail.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -20,22 +20,11 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace OCA\IntegrationYoutube\Listener;
-
-use OCP\Collaboration\Reference\RenderReferenceEvent;
-use OCP\EventDispatcher\Event;
-use OCP\EventDispatcher\IEventListener;
-use OCP\Util;
-
-/**
- * @template-implements IEventListener<Event>
- */
-class YoutubeReferenceListener implements IEventListener {
-	public function handle(Event $event): void {
-		if (!$event instanceof RenderReferenceEvent) {
-			return;
-		}
-
-		Util::addScript('integration_youtube', 'integration_youtube-main');
-	}
-}
+return [
+	'routes' => [
+		/** @see \OCA\IntegrationYoutube\Controller\ConfigController::setAdminConfig */
+		['name' => 'config#setAdminConfig', 'url' => '/admin-config', 'verb' => 'PUT'],
+		/** @see \OCA\IntegrationYoutube\Controller\ConfigController::setUserConfig */
+		['name' => 'config#setUserConfig', 'url' => '/user-config', 'verb' => 'PUT'],
+	]
+];

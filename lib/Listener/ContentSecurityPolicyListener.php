@@ -24,9 +24,13 @@ namespace OCA\IntegrationYoutube\Listener;
 
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\EventDispatcher\Event;
+use OCP\EventDispatcher\IEventListener;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
-class ContentSecurityPolicyListener implements \OCP\EventDispatcher\IEventListener {
+/**
+ * @template-implements IEventListener<Event>
+ */
+class ContentSecurityPolicyListener implements IEventListener {
 
 	/**
 	 * @inheritDoc
@@ -38,6 +42,8 @@ class ContentSecurityPolicyListener implements \OCP\EventDispatcher\IEventListen
 
 		$policy = new ContentSecurityPolicy();
 		$policy->addAllowedFrameDomain('https://www.youtube-nocookie.com');
+		$policy->addAllowedImageDomain('https://i.ytimg.com'); // video thumbnails
+		$policy->addAllowedImageDomain('https://yt3.ggpht.com'); // channel thumbnails
 		$event->addPolicy($policy);
 	}
 }

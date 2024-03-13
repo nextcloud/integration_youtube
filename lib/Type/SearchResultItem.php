@@ -1,8 +1,8 @@
 <?php
 /**
- * @copyright Copyright (c) 2022 Julius Härtl <jus@bitgrid.net>
+ * @copyright Copyright (c) 2024 Anupam Kumar <kyteinsky@gmail.com>
  *
- * @author Julius Härtl <jus@bitgrid.net>
+ * @author Anupam Kumar <kyteinsky@gmail.com>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -20,22 +20,29 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace OCA\IntegrationYoutube\Listener;
+namespace OCA\IntegrationYoutube\Type;
 
-use OCP\Collaboration\Reference\RenderReferenceEvent;
-use OCP\EventDispatcher\Event;
-use OCP\EventDispatcher\IEventListener;
-use OCP\Util;
+class SearchResultItem {
+	public string $id;
+	public string $title;
+	public string $description;
+	public string $thumbnailUrl;
+	public string $channelName;
+	public string $publishedAt;
 
-/**
- * @template-implements IEventListener<Event>
- */
-class YoutubeReferenceListener implements IEventListener {
-	public function handle(Event $event): void {
-		if (!$event instanceof RenderReferenceEvent) {
-			return;
-		}
-
-		Util::addScript('integration_youtube', 'integration_youtube-main');
+	public function __construct(
+		string $id,
+		string $title,
+		string $description,
+		string $thumbnailUrl,
+		string $channelName,
+		string $publishedAt
+	) {
+		$this->id = $id;
+		$this->title = $title;
+		$this->description = $description;
+		$this->thumbnailUrl = $thumbnailUrl;
+		$this->channelName = $channelName;
+		$this->publishedAt = $publishedAt;
 	}
 }
