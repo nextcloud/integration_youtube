@@ -1,6 +1,28 @@
+## 0.2.0 – 2024-03-13
+
+### Changed
+
+- Update workflows from templates
+- Drop Nextcloud 25 compatibility
+- Update node and composer deps
+- Checks adjusted to also check for php 7.4 on NC 26/27
+
+### Added
+
+- Create appstore-build-publish.yml
+- Add transfix config
+- Add gh workflows
+- Nextcloud 29 compatibility
+- Add search provider and smart picker functionality
+- Add some screenshots
+
+### Fixed
+
+- Stop using OC namespace for LinkReferenceProvider
+
 ## 0.1.5
 
-## Added
+### Added
 
 - Nextcloud 28 compatibility
 - @SuperSandro2000 Update links to directly point to the Nextcloud repo
