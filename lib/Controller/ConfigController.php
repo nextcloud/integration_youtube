@@ -47,7 +47,7 @@ class ConfigController extends Controller {
 		IL10N $l,
 		LoggerInterface $logger,
 		ICrypto $crypto,
-		?string $userId,
+		?string $userId
 	) {
 		parent::__construct($appName, $request);
 

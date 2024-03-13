@@ -63,7 +63,7 @@ class YoutubeReferenceProvider extends ADiscoverableReferenceProvider implements
 		IClientService $clientService,
 		IURLGenerator $urlGenerator,
 		LoggerInterface $logger,
-		IL10N $l10n,
+		IL10N $l10n
 	) {
 		$this->appDataFactory = $appDataFactory;
 		$this->clientService = $clientService;

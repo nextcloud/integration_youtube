@@ -49,7 +49,7 @@ class YoutubeAPIService {
 		IClientService $clientService,
 		LoggerInterface $logger,
 		IL10N $l10n,
-		ICrypto $crypto,
+		ICrypto $crypto
 	) {
 		$this->config = $config;
 		$this->client = $clientService->newClient();
@@ -138,7 +138,7 @@ class YoutubeAPIService {
 		string $endPoint,
 		array $params = [],
 		string $method = 'GET',
-		bool $jsonResponse = true,
+		bool $jsonResponse = true
 	) {
 		$token = $this->config->getAppValue(Application::APP_ID, 'token');
 

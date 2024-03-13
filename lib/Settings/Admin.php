@@ -42,7 +42,7 @@ class Admin implements ISettings {
 		IConfig $config,
 		IInitialState $initialStateService,
 		ICrypto $crypto,
-		LoggerInterface $logger,
+		LoggerInterface $logger
 	) {
 		$this->config = $config;
 		$this->initialStateService = $initialStateService;

@@ -55,7 +55,7 @@ abstract class YoutubeBaseSearchProvider implements IProvider {
 		YoutubeAPIService $service,
 		LoggerInterface $logger,
 		IDateTimeFormatter $dateTimeFormatter,
-		ICacheFactory $cacheFactory,
+		ICacheFactory $cacheFactory
 	) {
 		$this->l10n = $l10n;
 		$this->config = $config;

@@ -33,7 +33,7 @@ class PersonalSection implements IIconSection {
 
 	public function __construct(
 		IURLGenerator $urlGenerator,
-		IL10N $l,
+		IL10N $l
 	) {
 		$this->urlGenerator = $urlGenerator;
 		$this->l = $l;
