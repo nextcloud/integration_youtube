@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <info>
 	<id>integration_youtube</id>
-	<name>YouTube integration</name>
-	<summary>YouTube integration providing inline video player for link previews</summary>
-	<description><![CDATA[Youtube integration providing an inline video player for link previews with Nextcloud 25]]></description>
+	<name>YouTube Integration</name>
+	<summary>YouTube Integration providing inline video player for link previews</summary>
+	<description><![CDATA[Youtube integration providing an inline video player for link previews, a smart picker and search provider for searching Youtube videos, channels, and playlists.
+
+Configuration:
+
+Set an API key in the Administration settings -> Connected Accounts -> Youtube Integration section to allow the search and smart picker
+
+Note: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings.
+]]></description>
 	<version>0.1.5</version>
 	<licence>agpl</licence>
 	<author>Julius Härtl</author>
@@ -11,6 +18,9 @@
 	<category>integration</category>
 	<website>https://github.com/nextcloud/integration_youtube</website>
 	<bugs>https://github.com/nextcloud/integration_youtube/issues</bugs>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot1.jpg</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot2.jpg</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot3.jpg</screenshot>
 	<dependencies>
 		<nextcloud min-version="26" max-version="29"/>
 	</dependencies>
