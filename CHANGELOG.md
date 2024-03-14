@@ -1,3 +1,9 @@
+## 0.2.1 – 2024-03-14
+
+### Fixed
+
+- Fix screenshot URLs in info.xml
+
 ## 0.2.0 – 2024-03-13
 
 ### Changed
