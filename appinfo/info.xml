@@ -18,9 +18,9 @@ Note: The search and smart picker functionality is disabled by default. Users ca
 	<category>integration</category>
 	<website>https://github.com/nextcloud/integration_youtube</website>
 	<bugs>https://github.com/nextcloud/integration_youtube/issues</bugs>
-	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot1.jpg</screenshot>
-	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot2.jpg</screenshot>
-	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot3.jpg</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot1.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot2.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot3.png</screenshot>
 	<dependencies>
 		<nextcloud min-version="26" max-version="29"/>
 	</dependencies>
