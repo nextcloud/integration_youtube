@@ -11,7 +11,7 @@ Set an API key in the Administration settings -> Connected Accounts -> Youtube I
 
 Note: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings.
 ]]></description>
-	<version>0.2.1</version>
+	<version>0.3.0</version>
 	<licence>agpl</licence>
 	<author>Julius Härtl</author>
 	<namespace>IntegrationYoutube</namespace>
@@ -22,7 +22,7 @@ Note: The search and smart picker functionality is disabled by default. Users ca
 	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot2.png</screenshot>
 	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot3.png</screenshot>
 	<dependencies>
-		<nextcloud min-version="26" max-version="29"/>
+		<nextcloud min-version="26" max-version="30"/>
 	</dependencies>
 	<settings>
 		<admin>OCA\IntegrationYoutube\Settings\Admin</admin>
