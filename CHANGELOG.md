@@ -4,6 +4,14 @@
 
 - Fix screenshot URLs in info.xml
 
+## 0.3.0 – 2024-07-26
+
+### Changed
+- update composer deps @kyteinsky
+- update gh workflows @kyteinsky
+- bump max NC version to 30 @kyteinsky
+
+
 ## 0.2.0 – 2024-03-13
 
 ### Changed
