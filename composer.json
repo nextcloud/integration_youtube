@@ -4,7 +4,6 @@
 		"nextcloud/ocp": "dev-master",
 		"nextcloud/coding-standard": "^1.1",
 		"friendsofphp/php-cs-fixer": "^3.38",
-		"php-parallel-lint/php-parallel-lint": "^1.2",
 		"fusonic/opengraph": "^2.2",
 		"guzzlehttp/guzzle": "^7.5.0",
 		"psalm/phar": "^5.19"
@@ -17,7 +16,8 @@
 		}
 	},
 	"scripts": {
-		"lint": "parallel-lint --exclude vendor .",
+		"lint": "find . -name \\*.php -not -path './vendor*' -print0 | xargs -0 -n1 php -l",
+
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
 		"psalm": "psalm.phar",
