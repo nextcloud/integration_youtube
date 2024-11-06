@@ -49,7 +49,7 @@ class YoutubeAPIService {
 		IClientService $clientService,
 		LoggerInterface $logger,
 		IL10N $l10n,
-		ICrypto $crypto
+		ICrypto $crypto,
 	) {
 		$this->config = $config;
 		$this->client = $clientService->newClient();
@@ -138,7 +138,7 @@ class YoutubeAPIService {
 		string $endPoint,
 		array $params = [],
 		string $method = 'GET',
-		bool $jsonResponse = true
+		bool $jsonResponse = true,
 	) {
 		$token = $this->config->getAppValue(Application::APP_ID, 'token');
 
@@ -203,11 +203,11 @@ class YoutubeAPIService {
 				return json_decode($body, true);
 			}
 			return $body;
-		} catch (ServerException | ClientException $e) {
+		} catch (ServerException|ClientException $e) {
 			$body = $e->getResponse()->getBody();
 			$this->logger->warning('Youtube API error : ' . $body, ['app' => Application::APP_ID]);
 			return ['error' => $e->getMessage()];
-		} catch (Exception | Throwable $e) {
+		} catch (Exception|Throwable $e) {
 			$this->logger->warning('Youtube API error', ['exception' => $e, 'app' => Application::APP_ID]);
 			return ['error' => $e->getMessage()];
 		}

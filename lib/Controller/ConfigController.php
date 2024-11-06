@@ -50,7 +50,7 @@ class ConfigController extends Controller {
 		IL10N $l,
 		LoggerInterface $logger,
 		ICrypto $crypto,
-		?string $userId
+		?string $userId,
 	) {
 		parent::__construct($appName, $request);
 
@@ -76,7 +76,7 @@ class ConfigController extends Controller {
 	}
 
 	/**
-	 * @param array $values
+	 * @param array<string, string> $values
 	 * @return DataResponse
 	 */
 	#[PasswordConfirmationRequired]
@@ -95,7 +95,7 @@ class ConfigController extends Controller {
 				if ($value !== '') {
 					$value = $this->crypto->encrypt($value);
 				}
-					$this->config->setAppValue(Application::APP_ID, $key, $value);
+				$this->config->setAppValue(Application::APP_ID, $key, $value);
 			} catch (Exception $e) {
 				$this->config->setAppValue(Application::APP_ID, 'token', '');
 				// logger takes care not to leak the secret
