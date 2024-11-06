@@ -128,7 +128,6 @@ export default {
 	.settings-hint {
 		display: flex;
 		align-items: center;
-		margin-left: 32px;
 		.icon {
 			margin-right: 4px;
 		}
