@@ -22,32 +22,23 @@
 
 namespace OCA\IntegrationYoutube\Settings;
 
-use Exception;
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\IConfig;
-use OCP\Security\ICrypto;
 use OCP\Settings\ISettings;
-use Psr\Log\LoggerInterface;
 
 class Admin implements ISettings {
 
 	private IConfig $config;
 	private IInitialState $initialStateService;
-	private ICrypto $crypto;
-	private LoggerInterface $logger;
 
 	public function __construct(
 		IConfig $config,
 		IInitialState $initialStateService,
-		ICrypto $crypto,
-		LoggerInterface $logger
 	) {
 		$this->config = $config;
 		$this->initialStateService = $initialStateService;
-		$this->crypto = $crypto;
-		$this->logger = $logger;
 	}
 
 	/**
@@ -55,21 +46,9 @@ class Admin implements ISettings {
 	 */
 	public function getForm(): TemplateResponse {
 		$token = $this->config->getAppValue(Application::APP_ID, 'token');
-		$searchEnabled = $this->config->getAppValue(Application::APP_ID, 'search_enabled', 'false');
-
-		try {
-			if ($token !== '') {
-				$token = $this->crypto->decrypt($token);
-			}
-		} catch (Exception $e) {
-			// logger takes care not to leak the secret
-			$this->logger->error('Failed to decrypt the api key', ['exception' => $e]);
-			$token = '';
-		}
 
 		$adminConfig = [
-			'token' => $token,
-			'search_enabled' => $searchEnabled,
+			'token' => $token === '' ? '' : 'dummyToken',
 		];
 		$this->initialStateService->provideInitialState('admin-config', $adminConfig);
 		return new TemplateResponse(Application::APP_ID, 'adminSettings');

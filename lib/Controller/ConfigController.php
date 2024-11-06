@@ -25,6 +25,7 @@ namespace OCA\IntegrationYoutube\Controller;
 use Exception;
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http\Attribute\PasswordConfirmationRequired;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\IConfig;
 use OCP\IL10N;
@@ -39,6 +40,8 @@ class ConfigController extends Controller {
 	private LoggerInterface $logger;
 	private ICrypto $crypto;
 	private ?string $userId;
+	private const SENSITIVE_KEYS = ['token'];
+	private const PASSWORD_CONFIRMATION_KEYS = ['token'];
 
 	public function __construct(
 		string $appName,
@@ -64,20 +67,43 @@ class ConfigController extends Controller {
 	 */
 	public function setAdminConfig(array $values): DataResponse {
 		foreach ($values as $key => $value) {
+			if (in_array($key, self::SENSITIVE_KEYS, true) || in_array($key, self::PASSWORD_CONFIRMATION_KEYS, true)) {
+				continue;
+			}
+			$this->config->setAppValue(Application::APP_ID, $key, $value);
+		}
+		return new DataResponse([]);
+	}
+
+	/**
+	 * @param array $values
+	 * @return DataResponse
+	 */
+	#[PasswordConfirmationRequired]
+	public function setAdminConfigWithPasswordConfirm(array $values): DataResponse {
+		foreach ($values as $key => $value) {
+			if (!in_array($key, self::PASSWORD_CONFIRMATION_KEYS, true)) {
+				continue;
+			}
+
+			if (!in_array($key, self::SENSITIVE_KEYS, true)) {
+				$this->config->setAppValue(Application::APP_ID, $key, $value);
+				continue;
+			}
+
 			try {
-				if ($key === 'token' && $value !== '') {
+				if ($value !== '') {
 					$value = $this->crypto->encrypt($value);
 				}
+					$this->config->setAppValue(Application::APP_ID, $key, $value);
 			} catch (Exception $e) {
 				$this->config->setAppValue(Application::APP_ID, 'token', '');
 				// logger takes care not to leak the secret
 				$this->logger->error('Could not encrypt the Youtube api key', ['exception' => $e]);
 				return new DataResponse(['message' => $this->l->t('Could not encrypt the Youtube api key')]);
 			}
-
-			$this->config->setAppValue(Application::APP_ID, $key, $value);
 		}
-		return new DataResponse(1);
+		return new DataResponse([]);
 	}
 
 	/**
@@ -90,6 +116,6 @@ class ConfigController extends Controller {
 		foreach ($values as $key => $value) {
 			$this->config->setUserValue($this->userId, Application::APP_ID, $key, $value);
 		}
-		return new DataResponse(1);
+		return new DataResponse([]);
 	}
 }
