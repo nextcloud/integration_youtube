@@ -1,8 +1,11 @@
-## 0.2.1 – 2024-03-14
+## 0.3.1 – 2024-11-07
 
-### Fixed
+### Changed
+- update npm+composer deps @kyteinsky
+- consistent margin in personal and admin settings @kyteinsky
+- bump max NC version to 31 and drop support for 26 @kyteinsky
+- password confirmation + do not send back decrypted api keys to frontend @kyteinsky
 
-- Fix screenshot URLs in info.xml
 
 ## 0.3.0 – 2024-07-26
 
@@ -10,6 +13,13 @@
 - update composer deps @kyteinsky
 - update gh workflows @kyteinsky
 - bump max NC version to 30 @kyteinsky
+
+
+## 0.2.1 – 2024-03-14
+
+### Fixed
+
+- Fix screenshot URLs in info.xml
 
 
 ## 0.2.0 – 2024-03-13
