@@ -8,6 +8,7 @@
 /.eslintrc.js
 /.nextcloudignore
 /webpack.js
+/vite.config.js
 /.codecov.yml
 /composer.json
 /composer.lock

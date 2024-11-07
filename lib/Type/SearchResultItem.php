@@ -36,7 +36,7 @@ class SearchResultItem {
 		string $description,
 		string $thumbnailUrl,
 		string $channelName,
-		string $publishedAt
+		string $publishedAt,
 	) {
 		$this->id = $id;
 		$this->title = $title;

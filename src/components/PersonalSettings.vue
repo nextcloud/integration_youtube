@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
+import axios from '@nextcloud/axios'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import { showSuccess, showError } from '@nextcloud/dialogs'
-import axios from '@nextcloud/axios'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
 
 import InformationIcon from './icons/Information.vue'
 import YoutubeIcon from './icons/Youtube.vue'
@@ -90,7 +90,6 @@ export default {
 	.settings-hint {
 		display: flex;
 		align-items: center;
-		margin-left: 32px;
 		.icon {
 			margin-right: 4px;
 		}

@@ -20,15 +20,10 @@
  */
 
 import { registerWidget } from '@nextcloud/vue/dist/Components/NcRichText.js'
-import { linkTo } from '@nextcloud/router'
-import { getRequestToken } from '@nextcloud/auth'
 import Vue from 'vue'
 
-__webpack_nonce__ = btoa(getRequestToken()) // eslint-disable-line
-__webpack_public_path__ = linkTo('integration_youtube', 'js/') // eslint-disable-line
-
 registerWidget('integration_youtube', async (el, { richObjectType, richObject, accessible }) => {
-	const { default: YtIframe } = await import(/* webpackChunkName: "integration-youtube-iframe-lazy" */'./views/Youtube.vue')
+	const { default: YtIframe } = await import('./views/Youtube.vue')
 	const Widget = Vue.extend(YtIframe)
 	new Widget({
 		propsData: {

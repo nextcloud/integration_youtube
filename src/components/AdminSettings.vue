@@ -35,17 +35,18 @@
 					:readonly="readonly"
 					:placeholder="t('integration_youtube', 'API Key')"
 					@focus="readonly = false"
-					@input="onInput">
+					@input="onSensitiveInput">
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { loadState } from '@nextcloud/initial-state'
-import { generateUrl } from '@nextcloud/router'
-import { showSuccess, showError } from '@nextcloud/dialogs'
 import axios from '@nextcloud/axios'
+import { showError, showSuccess } from '@nextcloud/dialogs'
+import { loadState } from '@nextcloud/initial-state'
+import { confirmPassword } from '@nextcloud/password-confirmation'
+import { generateUrl } from '@nextcloud/router'
 
 import InformationIcon from './icons/Information.vue'
 import KeyIcon from './icons/Key.vue'
@@ -76,15 +77,30 @@ export default {
 	},
 
 	methods: {
-		onInput() {
+		onSensitiveInput() {
 			debounce(() => {
-				this.saveOptions(this.state)
+				this.saveOptions(true)
 			})
 		},
-		saveOptions(values) {
-			const req = { values }
-			const url = generateUrl('/apps/integration_youtube/admin-config')
-			axios.put(url, req).then((r) => {
+		async saveOptions(confirm = false) {
+			let url
+
+			const values = { ...this.state }
+			if (values.token === 'dummyToken') {
+				delete values.token
+			}
+			if (Object.keys(values).length === 0) {
+				return
+			}
+
+			if (confirm) {
+				await confirmPassword()
+				url = generateUrl('/apps/integration_youtube/admin-config-password-confirm')
+			} else {
+				url = generateUrl('/apps/integration_youtube/admin-config')
+			}
+
+			axios.put(url, { values }).then((r) => {
 				if (r.status >= 400) {
 					throw new Error(r.statusText)
 				}
@@ -112,7 +128,6 @@ export default {
 	.settings-hint {
 		display: flex;
 		align-items: center;
-		margin-left: 32px;
 		.icon {
 			margin-right: 4px;
 		}

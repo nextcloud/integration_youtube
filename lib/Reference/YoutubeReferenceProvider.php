@@ -63,7 +63,7 @@ class YoutubeReferenceProvider extends ADiscoverableReferenceProvider implements
 		IClientService $clientService,
 		IURLGenerator $urlGenerator,
 		LoggerInterface $logger,
-		IL10N $l10n
+		IL10N $l10n,
 	) {
 		$this->appDataFactory = $appDataFactory;
 		$this->clientService = $clientService;
@@ -142,7 +142,7 @@ class YoutubeReferenceProvider extends ADiscoverableReferenceProvider implements
 		}
 
 		$linkContentLength = $headResponse->getHeader('Content-Length');
-		if (is_numeric($linkContentLength) && (int) $linkContentLength > self::MAX_CONTENT_LENGTH) {
+		if (is_numeric($linkContentLength) && (int)$linkContentLength > self::MAX_CONTENT_LENGTH) {
 			$this->logger->debug('Skip resolving links pointing to content length > 5 MiB');
 			return;
 		}

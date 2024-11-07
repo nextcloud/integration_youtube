@@ -37,7 +37,7 @@ class Personal implements ISettings {
 	public function __construct(
 		IConfig $config,
 		IInitialState $initialStateService,
-		?string $userId
+		?string $userId,
 	) {
 		$this->config = $config;
 		$this->initialStateService = $initialStateService;
