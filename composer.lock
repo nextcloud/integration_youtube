@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6052527b0c883088cef011781d3b1d5f",
+    "content-hash": "17c9e29b8384d774beb74b1fbefa23f9",
     "packages": [],
     "packages-dev": [
         {
@@ -644,16 +644,16 @@
         },
         {
             "name": "psalm/phar",
-            "version": "5.26.1",
+            "version": "6.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/psalm/phar.git",
-                "reference": "8a38e7ad04499a0ccd2c506fd1da6fc01fff4547"
+                "reference": "38771dadf1f2c64cadc3a81d12a73c23d040380f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/phar/zipball/8a38e7ad04499a0ccd2c506fd1da6fc01fff4547",
-                "reference": "8a38e7ad04499a0ccd2c506fd1da6fc01fff4547",
+                "url": "https://api.github.com/repos/psalm/phar/zipball/38771dadf1f2c64cadc3a81d12a73c23d040380f",
+                "reference": "38771dadf1f2c64cadc3a81d12a73c23d040380f",
                 "shasum": ""
             },
             "require": {
@@ -673,9 +673,9 @@
             "description": "Composer-based Psalm Phar",
             "support": {
                 "issues": "https://github.com/psalm/phar/issues",
-                "source": "https://github.com/psalm/phar/tree/5.26.1"
+                "source": "https://github.com/psalm/phar/tree/6.4.0"
             },
-            "time": "2024-09-09T16:22:43+00:00"
+            "time": "2025-02-05T14:15:07+00:00"
         },
         {
             "name": "psr/clock",
@@ -2283,14 +2283,14 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "nextcloud/ocp": 20
+        "nextcloud/ocp": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3"
+        "php": "^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
