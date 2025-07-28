@@ -1,3 +1,16 @@
+## 0.4.0 – 2025-07-28
+
+### Changed
+
+- Bump max Nextcloud version to 28 @julien-nc
+- Use Psalm 6 @julien-nc
+- Update composer dependencies @julien-nc
+
+### Fixed
+
+- Style issues in admin and personal settings, wrong title alignment @julien-nc
+- Fix link to google console @julien-nc
+
 ## 0.3.1 – 2024-11-07
 
 ### Changed

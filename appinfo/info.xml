@@ -11,7 +11,7 @@ Set an API key in the Administration settings -> Connected Accounts -> Youtube I
 
 Note: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings.
 ]]></description>
-	<version>0.3.1</version>
+	<version>0.4.0</version>
 	<licence>agpl</licence>
 	<author>Julius Härtl</author>
 	<namespace>IntegrationYoutube</namespace>
