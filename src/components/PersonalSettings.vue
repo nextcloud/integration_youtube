@@ -85,6 +85,10 @@ export default {
 		margin-left: 40px;
 	}
 
+	h2 {
+		justify-content: start;
+	}
+
 	h2,
 	.line,
 	.settings-hint {
