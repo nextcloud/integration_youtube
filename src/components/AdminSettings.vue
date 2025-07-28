@@ -13,7 +13,7 @@
 		</p>
 		<p class="settings-hint">
 			<ol type="1">
-				<li>{{ t('integration_youtube', 'Visit') }}{{ " " }}<a>https://console.cloud.google.com</a></li>
+				<li>{{ t('integration_youtube', 'Visit') }}{{ " " }}<a href="https://console.cloud.google.com" target="_blank">https://console.cloud.google.com</a></li>
 				<li>{{ t('integration_youtube', 'Search and enable "YouTube Data API v3"') }}</li>
 				<li>{{ t('integration_youtube', 'Create credentials for Public Data usage') }}</li>
 			</ol>
@@ -121,6 +121,10 @@ export default {
 #integration_youtube_prefs {
 	#integration_youtube_content {
 		margin-left: 40px;
+	}
+
+	h2 {
+		justify-content: start;
 	}
 
 	h2,
