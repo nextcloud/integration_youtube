@@ -24,26 +24,13 @@
 namespace OCA\IntegrationYoutube\Type;
 
 class SearchResultItem {
-	public string $id;
-	public string $title;
-	public string $description;
-	public string $thumbnailUrl;
-	public string $channelName;
-	public string $publishedAt;
-
 	public function __construct(
-		string $id,
-		string $title,
-		string $description,
-		string $thumbnailUrl,
-		string $channelName,
-		string $publishedAt,
+		public string $id,
+		public string $title,
+		public string $description,
+		public string $thumbnailUrl,
+		public string $channelName,
+		public string $publishedAt,
 	) {
-		$this->id = $id;
-		$this->title = $title;
-		$this->description = $description;
-		$this->thumbnailUrl = $thumbnailUrl;
-		$this->channelName = $channelName;
-		$this->publishedAt = $publishedAt;
 	}
 }
