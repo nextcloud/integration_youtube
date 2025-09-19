@@ -11,9 +11,9 @@
  * @copyright Anupam Kumar 2024
  */
 
-import Vue from 'vue'
-import './bootstrap.js'
+import { createApp } from 'vue'
 import PersonalSettings from './components/PersonalSettings.vue'
 
-const VuePersonalSettings = Vue.extend(PersonalSettings)
-new VuePersonalSettings().$mount('#integration_youtube_prefs')
+const app = createApp(PersonalSettings)
+app.mixin({ methods: { t, n } })
+app.mount('#integration_youtube_prefs')

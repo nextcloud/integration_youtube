@@ -19,7 +19,27 @@ export default createAppConfig({
 				localsConvention: 'camelCase',
 			},
 		},
-		plugins: [eslint(), stylelint()],
+		plugins: [
+			eslint({
+				failOnError: isProduction,
+				failOnWarning: false,
+				emitWarning: true,
+				emitError: true,
+				cache: true,
+				cacheLocation: './node_modules/.cache/.eslintcache',
+			}),
+			stylelint({
+				failOnError: isProduction,
+				failOnWarning: false,
+				emitWarning: true,
+				emitError: true,
+				cache: true,
+				cacheLocation: './node_modules/.cache/.stylelintcache',
+			}),
+		],
+		build: {
+			cssCodeSplit: true,
+		},
 	},
 	inlineCSS: { relativeCSSInjection: true },
 	minify: isProduction,

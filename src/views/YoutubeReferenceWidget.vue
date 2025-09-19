@@ -20,7 +20,8 @@
   -->
 
 <template>
-	<iframe width="100%"
+	<iframe
+		width="100%"
 		height="315"
 		:src="youtubeEmbed"
 		frameborder="0"
@@ -30,13 +31,15 @@
 
 <script>
 export default {
-	name: 'Youtube',
+	name: 'YoutubeReferenceWidget',
+
 	props: {
 		richObject: {
 			type: Object,
 			default: null,
 		},
 	},
+
 	computed: {
 		youtubeEmbed() {
 			return 'https://www.youtube-nocookie.com/embed/' + this.richObject?.videoId
