@@ -28,9 +28,9 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCA\IntegrationYoutube\Type\SearchResultItem;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\Http\Client\IClient;
 use OCP\Http\Client\IClientService;
-use OCP\IConfig;
 use OCP\IL10N;
 use OCP\Security\ICrypto;
 use Psr\Log\LoggerInterface;
@@ -42,7 +42,7 @@ class YoutubeAPIService {
 	protected IClient $client;
 
 	public function __construct(
-		protected IConfig $config,
+		protected IAppConfig $appConfig,
 		protected LoggerInterface $logger,
 		protected IL10N $l10n,
 		protected ICrypto $crypto,
@@ -133,7 +133,7 @@ class YoutubeAPIService {
 		string $method = 'GET',
 		bool $jsonResponse = true,
 	) {
-		$token = $this->config->getAppValue(Application::APP_ID, 'token');
+		$token = $this->appConfig->getAppValueString(Application::APP_ID, 'token', lazy: true);
 
 		try {
 			if ($token === '') {

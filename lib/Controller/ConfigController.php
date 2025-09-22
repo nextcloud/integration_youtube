@@ -24,12 +24,12 @@
 namespace OCA\IntegrationYoutube\Controller;
 
 use Exception;
-use OCA\IntegrationYoutube\AppInfo\Application;
 use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\Attribute\PasswordConfirmationRequired;
 use OCP\AppFramework\Http\DataResponse;
-use OCP\IConfig;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\IL10N;
 use OCP\IRequest;
 use OCP\Security\ICrypto;
@@ -43,7 +43,7 @@ class ConfigController extends Controller {
 	public function __construct(
 		string $appName,
 		IRequest $request,
-		protected IConfig $config,
+		protected IAppConfig $appConfig,
 		protected IL10N $l,
 		protected LoggerInterface $logger,
 		protected ICrypto $crypto,
@@ -57,13 +57,18 @@ class ConfigController extends Controller {
 	 * @return DataResponse
 	 */
 	public function setAdminConfig(array $values): DataResponse {
-		foreach ($values as $key => $value) {
-			if (in_array($key, self::SENSITIVE_KEYS, true) || in_array($key, self::PASSWORD_CONFIRMATION_KEYS, true)) {
-				continue;
+		try {
+			foreach ($values as $key => $value) {
+				if (in_array($key, self::SENSITIVE_KEYS, true) || in_array($key, self::PASSWORD_CONFIRMATION_KEYS, true)) {
+					continue;
+				}
+				$this->appConfig->setAppValueString($key, $value, lazy: true);
 			}
-			$this->config->setAppValue(Application::APP_ID, $key, $value);
+			return new DataResponse([]);
+		} catch (Exception $e) {
+			$this->logger->error('Could not save the admin config', ['exception' => $e]);
+			return new DataResponse(['error' => $e->getMessage()], Http::STATUS_INTERNAL_SERVER_ERROR);
 		}
-		return new DataResponse([]);
 	}
 
 	/**
@@ -72,29 +77,34 @@ class ConfigController extends Controller {
 	 */
 	#[PasswordConfirmationRequired]
 	public function setAdminConfigWithPasswordConfirm(array $values): DataResponse {
-		foreach ($values as $key => $value) {
-			if (!in_array($key, self::PASSWORD_CONFIRMATION_KEYS, true)) {
-				continue;
-			}
-
-			if (!in_array($key, self::SENSITIVE_KEYS, true)) {
-				$this->config->setAppValue(Application::APP_ID, $key, $value);
-				continue;
-			}
-
-			try {
-				if ($value !== '') {
-					$value = $this->crypto->encrypt($value);
+		try {
+			foreach ($values as $key => $value) {
+				if (!in_array($key, self::PASSWORD_CONFIRMATION_KEYS, true)) {
+					continue;
 				}
-				$this->config->setAppValue(Application::APP_ID, $key, $value);
-			} catch (Exception $e) {
-				$this->config->setAppValue(Application::APP_ID, 'token', '');
-				// logger takes care not to leak the secret
-				$this->logger->error('Could not encrypt the Youtube api key', ['exception' => $e]);
-				return new DataResponse(['message' => $this->l->t('Could not encrypt the Youtube api key')]);
+
+				if (!in_array($key, self::SENSITIVE_KEYS, true)) {
+					$this->appConfig->setAppValueString($key, $value, lazy: true);
+					continue;
+				}
+
+				try {
+					if ($value !== '') {
+						$value = $this->crypto->encrypt($value);
+					}
+					$this->appConfig->setAppValueString($key, $value, lazy: true);
+				} catch (Exception $e) {
+					$this->appConfig->setAppValueString('token', '', lazy: true);
+					// logger takes care not to leak the secret
+					$this->logger->error('Could not encrypt the Youtube api key', ['exception' => $e]);
+					return new DataResponse(['error' => $this->l->t('Could not encrypt the Youtube api key')], Http::STATUS_INTERNAL_SERVER_ERROR);
+				}
 			}
+			return new DataResponse([]);
+		} catch (Exception $e) {
+			$this->logger->error('Could not save the admin config', ['exception' => $e]);
+			return new DataResponse(['error' => $e->getMessage()], Http::STATUS_INTERNAL_SERVER_ERROR);
 		}
-		return new DataResponse([]);
 	}
 
 	/**
@@ -103,9 +113,14 @@ class ConfigController extends Controller {
 	 */
 	#[NoAdminRequired]
 	public function setUserConfig(array $values): DataResponse {
-		foreach ($values as $key => $value) {
-			$this->config->setUserValue($this->userId, Application::APP_ID, $key, $value);
+		try {
+			foreach ($values as $key => $value) {
+				$this->appConfig->setUserValue($this->userId, $key, $value);
+			}
+			return new DataResponse([]);
+		} catch (Exception $e) {
+			$this->logger->error('Could not save the user config', ['exception' => $e]);
+			return new DataResponse(['error' => $this->l->t('Could not save the user config')], Http::STATUS_INTERNAL_SERVER_ERROR);
 		}
-		return new DataResponse([]);
 	}
 }
