@@ -39,24 +39,16 @@ use Throwable;
 
 class YoutubeAPIService {
 
-	private IConfig $config;
-	private IClient $client;
-	private LoggerInterface $logger;
-	private IL10N $l10n;
-	private ICrypto $crypto;
+	protected IClient $client;
 
 	public function __construct(
-		IConfig $config,
+		protected IConfig $config,
+		protected LoggerInterface $logger,
+		protected IL10N $l10n,
+		protected ICrypto $crypto,
 		IClientService $clientService,
-		LoggerInterface $logger,
-		IL10N $l10n,
-		ICrypto $crypto,
 	) {
-		$this->config = $config;
 		$this->client = $clientService->newClient();
-		$this->logger = $logger;
-		$this->l10n = $l10n;
-		$this->crypto = $crypto;
 	}
 
 	/**
@@ -112,7 +104,7 @@ class YoutubeAPIService {
 				$results[] = new SearchResultItem(
 					$item['id'][$type . 'Id'],
 					$item['snippet']['title'],
-					$item['snippet']['description'],
+					$item['snippet']['description'] ?: $this->l10n->t('No description'),
 					$item['snippet']['thumbnails']['default']['url'],
 					$item['snippet']['channelTitle'],
 					$item['snippet']['publishedAt'],

@@ -26,6 +26,7 @@ namespace OCA\IntegrationYoutube\Controller;
 use Exception;
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\Attribute\PasswordConfirmationRequired;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\IConfig;
@@ -36,30 +37,19 @@ use Psr\Log\LoggerInterface;
 
 class ConfigController extends Controller {
 
-	private IConfig $config;
-	private IL10N $l;
-	private LoggerInterface $logger;
-	private ICrypto $crypto;
-	private ?string $userId;
 	private const SENSITIVE_KEYS = ['token'];
 	private const PASSWORD_CONFIRMATION_KEYS = ['token'];
 
 	public function __construct(
 		string $appName,
 		IRequest $request,
-		IConfig $config,
-		IL10N $l,
-		LoggerInterface $logger,
-		ICrypto $crypto,
-		?string $userId,
+		protected IConfig $config,
+		protected IL10N $l,
+		protected LoggerInterface $logger,
+		protected ICrypto $crypto,
+		protected ?string $userId,
 	) {
 		parent::__construct($appName, $request);
-
-		$this->config = $config;
-		$this->l = $l;
-		$this->logger = $logger;
-		$this->crypto = $crypto;
-		$this->userId = $userId;
 	}
 
 	/**
@@ -108,11 +98,10 @@ class ConfigController extends Controller {
 	}
 
 	/**
-	 * @NoAdminRequired
-	 *
 	 * @param array $values
 	 * @return DataResponse
 	 */
+	#[NoAdminRequired]
 	public function setUserConfig(array $values): DataResponse {
 		foreach ($values as $key => $value) {
 			$this->config->setUserValue($this->userId, Application::APP_ID, $key, $value);
