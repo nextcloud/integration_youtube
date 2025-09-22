@@ -113,7 +113,7 @@ export default {
 				showSuccess(t('integration_youtube', 'Youtube admin options saved'))
 			}).catch((error) => {
 				showError(t('integration_youtube', 'Failed to save Youtube admin options')
-					+ ': ' + (error.response ?? ''))
+					+ ': ' + (error.response?.data?.error ?? ''))
 				console.error(error)
 			}).finally(() => {
 				this.loading = false
