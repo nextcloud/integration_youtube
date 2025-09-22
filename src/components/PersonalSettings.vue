@@ -1,19 +1,19 @@
 <template>
-	<div id="integration_youtube_prefs" class="section">
+	<div id="integration_youtube_prefs" class="settigs-section">
 		<h2>
-			<YoutubeIcon class="icon" />
+			<YoutubeIcon class="icon" :size="32" />
 			{{ t('integration_youtube', 'Youtube Integration') }}
 		</h2>
-		<NcCheckboxRadioSwitch
-			:checked.sync="searchEnabled"
-			@update:checked="onSearchChange">
-			{{ t('integration_youtube', 'Enable searching for Youtube videos/channels/playlists') }}
-		</NcCheckboxRadioSwitch>
-		<br>
-		<p v-if="searchEnabled" class="settings-hint">
-			<InformationIcon :size="24" class="icon" />
-			{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to Youtube.') }}
-		</p>
+		<div id="integration_youtube_content">
+			<NcCheckboxRadioSwitch
+				:model-value="searchEnabled"
+				@update:model-value="onSearchChange">
+				{{ t('integration_youtube', 'Enable searching for Youtube videos/channels/playlists') }}
+			</NcCheckboxRadioSwitch>
+			<NcNoteCard v-if="searchEnabled" type="warning">
+				{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to Youtube.') }}
+			</NcNoteCard>
+		</div>
 	</div>
 </template>
 
@@ -22,17 +22,16 @@ import axios from '@nextcloud/axios'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-
-import InformationIcon from './icons/Information.vue'
-import YoutubeIcon from './icons/Youtube.vue'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
+import YoutubeIcon from './icons/YoutubeIcon.vue'
 
 export default {
 	name: 'PersonalSettings',
 
 	components: {
-		InformationIcon,
 		NcCheckboxRadioSwitch,
+		NcNoteCard,
 		YoutubeIcon,
 	},
 
@@ -56,9 +55,11 @@ export default {
 			this.state.search_enabled = value ? 'true' : 'false'
 			this.onInput()
 		},
+
 		onInput() {
 			this.saveOptions(this.state)
 		},
+
 		saveOptions(values) {
 			const req = { values }
 			const url = generateUrl('/apps/integration_youtube/user-config')
@@ -68,10 +69,8 @@ export default {
 				}
 				showSuccess(t('integration_youtube', 'Youtube user options saved'))
 			}).catch((error) => {
-				showError(
-					t('integration_youtube', 'Failed to save Youtube user options')
-					+ ': ' + (error.response ?? ''),
-				)
+				showError(t('integration_youtube', 'Failed to save Youtube user options')
+					+ ': ' + (error.response ?? ''))
 				console.error(error)
 			})
 		},
@@ -82,7 +81,8 @@ export default {
 <style scoped lang="scss">
 #integration_youtube_prefs {
 	#integration_youtube_content {
-		margin-left: 40px;
+		margin-inline-start: 52px;
+		max-width: 800px;
 	}
 
 	h2 {
@@ -95,12 +95,12 @@ export default {
 		display: flex;
 		align-items: center;
 		.icon {
-			margin-right: 4px;
+			margin-inline-end: 4px;
 		}
 	}
 
 	h2 .icon {
-		margin-right: 8px;
+		margin: 0 8px 0 12px;
 	}
 
 	.line {
@@ -119,7 +119,7 @@ export default {
 	}
 
 	ol {
-		margin-left: 24px;
+		margin-inline-start: 24px;
 	}
 }
 </style>

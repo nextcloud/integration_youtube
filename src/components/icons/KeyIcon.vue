@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <template>
-	<span v-bind="$attrs"
+	<span
+		v-bind="$attrs"
 		:aria-hidden="!title"
 		:aria-label="title"
 		class="material-design-icon key-icon"
 		role="img"
 		@click="$emit('click', $event)">
-		<svg :fill="fillColor"
+		<svg
+			:fill="fillColor"
 			class="material-design-icon__svg"
 			:width="size"
 			:height="size"
@@ -42,21 +44,24 @@ SOFTWARE.
 
 <script>
 export default {
-	name: 'Key',
+	name: 'KeyIcon',
 	props: {
 		title: {
 			type: String,
 			default: '',
 		},
+
 		fillColor: {
 			type: String,
 			default: 'currentColor',
 		},
+
 		size: {
 			type: Number,
 			default: 24,
 		},
 	},
+
 	emits: ['click'],
 }
 </script>

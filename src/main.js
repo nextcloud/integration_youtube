@@ -19,17 +19,12 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { registerWidget } from '@nextcloud/vue/dist/Components/NcRichText.js'
-import Vue from 'vue'
+import { registerWidget } from '@nextcloud/vue/components/NcRichText'
 
-registerWidget('integration_youtube', async (el, { richObjectType, richObject, accessible }) => {
-	const { default: YtIframe } = await import('./views/Youtube.vue')
-	const Widget = Vue.extend(YtIframe)
-	new Widget({
-		propsData: {
-			richObjectType,
-			richObject,
-			accessible,
-		},
-	}).$mount(el)
+registerWidget('integration_youtube', async (el, { richObject }) => {
+	const { createApp } = await import('vue')
+	const { default: YtIframe } = await import('./views/YoutubeReferenceWidget.vue')
+	const app = createApp(YtIframe, { richObject })
+	app.mixin({ methods: { t, n } })
+	app.mount(el)
 })

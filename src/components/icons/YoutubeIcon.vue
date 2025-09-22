@@ -1,11 +1,13 @@
 <template>
-	<span :aria-hidden="!title"
+	<span
+		:aria-hidden="!title"
 		:aria-label="title"
 		class="material-design-icon youtube-icon"
 		role="img"
 		v-bind="$attrs"
 		@click="$emit('click', $event)">
-		<svg :fill="fillColor"
+		<svg
+			:fill="fillColor"
 			:width="size"
 			:height="size"
 			enable-background="new 0 0 50 50"
@@ -20,21 +22,24 @@
 
 <script>
 export default {
-	name: 'Youtube',
+	name: 'YoutubeIcon',
 	props: {
 		title: {
 			type: String,
 			default: '',
 		},
+
 		fillColor: {
 			type: String,
 			default: 'currentColor',
 		},
+
 		size: {
 			type: Number,
 			default: 24,
 		},
 	},
+
 	emits: ['click'],
 }
 </script>
