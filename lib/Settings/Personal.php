@@ -25,14 +25,14 @@ namespace OCA\IntegrationYoutube\Settings;
 
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\AppFramework\Services\IInitialState;
-use OCP\IConfig;
 use OCP\Settings\ISettings;
 
 class Personal implements ISettings {
 
 	public function __construct(
-		protected IConfig $config,
+		protected IAppConfig $appConfig,
 		protected IInitialState $initialStateService,
 		protected ?string $userId,
 	) {
@@ -42,7 +42,7 @@ class Personal implements ISettings {
 	 * @return TemplateResponse
 	 */
 	public function getForm(): TemplateResponse {
-		$searchEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'search_enabled', 'false');
+		$searchEnabled = $this->appConfig->getUserValue($this->userId, 'search_enabled', 'false');
 
 		$userConfig = [
 			'search_enabled' => $searchEnabled,

@@ -28,9 +28,9 @@ use DateTime;
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCA\IntegrationYoutube\Service\YoutubeAPIService;
 use OCA\IntegrationYoutube\Type\SearchResultItem;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\ICache;
 use OCP\ICacheFactory;
-use OCP\IConfig;
 use OCP\IDateTimeFormatter;
 use OCP\IL10N;
 use OCP\IUser;
@@ -46,7 +46,7 @@ abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 
 	public function __construct(
 		protected IL10N $l10n,
-		protected IConfig $config,
+		protected IAppConfig $appConfig,
 		protected YoutubeAPIService $service,
 		protected LoggerInterface $logger,
 		protected IDateTimeFormatter $dateTimeFormatter,
@@ -65,11 +65,11 @@ abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 	}
 
 	protected function searchFor(string $type, IUser $user, ISearchQuery $query): SearchResult {
-		if ($this->config->getUserValue($user->getUID(), Application::APP_ID, 'search_enabled', 'false') === 'false') {
+		if ($this->appConfig->getUserValue($user->getUID(), 'search_enabled', 'false') === 'false') {
 			return SearchResult::complete($this->getName(), []);
 		}
 
-		if ($this->config->getAppValue(Application::APP_ID, 'token') === '') {
+		if ($this->appConfig->getAppValueString('token', lazy: true) === '') {
 			$this->logger->warning('Youtube search provider is not configured, set a API Key in the settings');
 			return SearchResult::complete($this->getName(), []);
 		}
