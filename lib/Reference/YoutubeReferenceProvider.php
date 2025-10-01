@@ -114,6 +114,12 @@ class YoutubeReferenceProvider extends ADiscoverableReferenceProvider implements
 
 			$reference->setRichObject('integration_youtube', [
 				'videoId' => $this->getVideoId($referenceText),
+				// open-graph data
+				'id' => $reference->getId(),
+				'name' => $reference->getTitle(),
+				'description' => $reference->getDescription(),
+				'thumb' => $reference->getImageUrl(),
+				'link' => $referenceText,
 			]);
 			return $reference;
 		}

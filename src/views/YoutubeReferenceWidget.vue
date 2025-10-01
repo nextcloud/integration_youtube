@@ -20,7 +20,12 @@
   -->
 
 <template>
+	<NcReferenceWidget
+		v-if="!interactive && reference"
+		class="non-interactive-widget"
+		:reference="reference" />
 	<iframe
+		v-if="interactive"
 		width="100%"
 		height="315"
 		:src="youtubeEmbed"
@@ -30,13 +35,29 @@
 </template>
 
 <script>
+import { NcReferenceWidget } from '@nextcloud/vue/components/NcRichText'
+
 export default {
 	name: 'YoutubeReferenceWidget',
+
+	components: {
+		NcReferenceWidget,
+	},
 
 	props: {
 		richObject: {
 			type: Object,
 			default: null,
+		},
+
+		accessible: {
+			type: Boolean,
+			default: false,
+		},
+
+		interactive: {
+			type: Boolean,
+			default: false,
 		},
 	},
 
@@ -44,6 +65,23 @@ export default {
 		youtubeEmbed() {
 			return 'https://www.youtube-nocookie.com/embed/' + this.richObject?.videoId
 		},
+
+		reference() {
+			return {
+				richObjectType: 'open-graph',
+				richObject: this.richObject,
+				accessible: this.accessible,
+				openGraphObject: { ...this.richObject },
+			}
+		},
 	},
 }
 </script>
+
+<style scoped>
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+:global(.non-interactive-widget a) {
+	border: unset !important;
+	margin: unset !important;
+}
+</style>
