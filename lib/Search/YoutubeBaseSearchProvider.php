@@ -34,34 +34,24 @@ use OCP\IConfig;
 use OCP\IDateTimeFormatter;
 use OCP\IL10N;
 use OCP\IUser;
-use OCP\Search\IProvider;
+use OCP\Search\IExternalProvider;
 use OCP\Search\ISearchQuery;
 use OCP\Search\SearchResult;
 use OCP\Search\SearchResultEntry;
 use Psr\Log\LoggerInterface;
 
-abstract class YoutubeBaseSearchProvider implements IProvider {
+abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 
-	protected IL10N $l10n;
-	private IConfig $config;
-	private YoutubeAPIService $service;
-	private LoggerInterface $logger;
-	private IDateTimeFormatter $dateTimeFormatter;
 	private ?ICache $cache = null;
 
 	public function __construct(
-		IL10N $l10n,
-		IConfig $config,
-		YoutubeAPIService $service,
-		LoggerInterface $logger,
-		IDateTimeFormatter $dateTimeFormatter,
+		protected IL10N $l10n,
+		protected IConfig $config,
+		protected YoutubeAPIService $service,
+		protected LoggerInterface $logger,
+		protected IDateTimeFormatter $dateTimeFormatter,
 		ICacheFactory $cacheFactory,
 	) {
-		$this->l10n = $l10n;
-		$this->config = $config;
-		$this->service = $service;
-		$this->logger = $logger;
-		$this->dateTimeFormatter = $dateTimeFormatter;
 		if ($cacheFactory->isLocalCacheAvailable()) {
 			$this->cache = $cacheFactory->createLocal(Application::APP_ID);
 		}
@@ -160,5 +150,9 @@ abstract class YoutubeBaseSearchProvider implements IProvider {
 	protected function getSubline(SearchResultItem $entry): string {
 		$date = $this->dateTimeFormatter->formatTimeSpan(new DateTime($entry->publishedAt), null, $this->l10n);
 		return $entry->channelName . ' - ' . $date . ' - ' . $entry->description;
+	}
+
+	public function isExternalProvider(): bool {
+		return true;
 	}
 }
