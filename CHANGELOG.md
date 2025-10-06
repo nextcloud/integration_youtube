@@ -1,3 +1,18 @@
+## 0.5.0 – 2025-10-06
+
+### Changed
+- set min NC to 32 (#33) @kyteinsky
+- use IExternalProvider, php updates, drop reimpl of reference population (#33) @kyteinsky
+- get-set app config values lazily (#34) @kyteinsky
+
+### Fixed
+- fix(readme): screenshot order (#36) @hamza221
+
+### Added
+- migrate to vue3 + lint fixes (#32) @kyteinsky
+- lighter non-interactive reference widget by default (#35) @kyteinsky
+
+
 ## 0.4.0 – 2025-07-28
 
 ### Changed
