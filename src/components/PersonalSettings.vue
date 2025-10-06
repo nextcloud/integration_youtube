@@ -70,7 +70,7 @@ export default {
 				showSuccess(t('integration_youtube', 'Youtube user options saved'))
 			}).catch((error) => {
 				showError(t('integration_youtube', 'Failed to save Youtube user options')
-					+ ': ' + (error.response ?? ''))
+					+ ': ' + (error.response?.data?.error ?? ''))
 				console.error(error)
 			})
 		},

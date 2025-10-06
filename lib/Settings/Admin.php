@@ -25,14 +25,14 @@ namespace OCA\IntegrationYoutube\Settings;
 
 use OCA\IntegrationYoutube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\AppFramework\Services\IInitialState;
-use OCP\IConfig;
 use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
 
 	public function __construct(
-		protected IConfig $config,
+		protected IAppConfig $appConfig,
 		protected IInitialState $initialStateService,
 	) {
 	}
@@ -41,7 +41,7 @@ class Admin implements ISettings {
 	 * @return TemplateResponse
 	 */
 	public function getForm(): TemplateResponse {
-		$token = $this->config->getAppValue(Application::APP_ID, 'token');
+		$token = $this->appConfig->getAppValueString('token', lazy: true);
 
 		$adminConfig = [
 			'token' => $token === '' ? '' : 'dummyToken',
