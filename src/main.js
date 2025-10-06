@@ -21,10 +21,10 @@
 
 import { registerWidget } from '@nextcloud/vue/components/NcRichText'
 
-registerWidget('integration_youtube', async (el, { richObject }) => {
+registerWidget('integration_youtube', async (el, { richObject, accessible, interactive }) => {
 	const { createApp } = await import('vue')
 	const { default: YtIframe } = await import('./views/YoutubeReferenceWidget.vue')
-	const app = createApp(YtIframe, { richObject })
+	const app = createApp(YtIframe, { richObject, accessible, interactive })
 	app.mixin({ methods: { t, n } })
 	app.mount(el)
 })
