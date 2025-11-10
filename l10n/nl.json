@@ -1,0 +1,8 @@
+{ "translations": {
+    "No description" : "Geen beschrijving",
+    "Bad HTTP method" : "Foute HTTP methode",
+    "Bad credentials" : "Foute inloggegevens",
+    "Connected accounts" : "Verbonden accounts",
+    "Visit" : "Bezoek"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

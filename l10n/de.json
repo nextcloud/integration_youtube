@@ -1,0 +1,6 @@
+{ "translations": {
+    "No description" : "Keine Beschreibung",
+    "Bad credentials" : "Falsche Anmeldeinformationen",
+    "Connected accounts" : "Verbundene Konten"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
