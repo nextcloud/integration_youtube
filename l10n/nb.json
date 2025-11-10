@@ -1,0 +1,8 @@
+{ "translations": {
+    "No description" : "Ingen beskrivelse",
+    "Bad HTTP method" : "HTTP-metode er feil",
+    "Bad credentials" : "Påloggingsdetaljene er feil",
+    "Connected accounts" : "Tilknyttede kontoer",
+    "Visit" : "Besøk"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

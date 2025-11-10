@@ -1,0 +1,11 @@
+OC.L10N.register(
+    "integration_youtube",
+    {
+    "No description" : "無描述",
+    "Bad HTTP method" : "錯誤的 HTTP 方法",
+    "Bad credentials" : "錯誤的憑證",
+    "Connected accounts" : "已連結的帳號",
+    "Visit" : "造訪",
+    "API Key" : "API 金鑰"
+},
+"nplurals=1; plural=0;");

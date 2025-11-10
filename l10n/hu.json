@@ -1,0 +1,8 @@
+{ "translations": {
+    "No description" : "Nincs leírás",
+    "Bad HTTP method" : "Hibás HTTP metódus",
+    "Bad credentials" : "Hibás hitelesítő adatok",
+    "Connected accounts" : "Kapcsolt fiókok",
+    "API Key" : "API-kulcs"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
