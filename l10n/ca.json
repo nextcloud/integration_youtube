@@ -1,4 +1,7 @@
 { "translations": {
-    "Bad credentials" : "Credencials dolentes"
+    "Bad HTTP method" : "Mètode HTTP incorrecte",
+    "Bad credentials" : "Credencials dolentes",
+    "Connected accounts" : "Comptes connectats",
+    "Visit" : "Visitar"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

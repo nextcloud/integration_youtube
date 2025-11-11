@@ -2,7 +2,10 @@ OC.L10N.register(
     "integration_youtube",
     {
     "No description" : "Sin descripción",
+    "Bad HTTP method" : "Método HTTP erróneo",
     "Bad credentials" : "Credenciales erróneas",
-    "Connected accounts" : "Cuentas conectadas"
+    "Connected accounts" : "Cuentas conectadas",
+    "Visit" : "Visitar",
+    "API Key" : "Clave API"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

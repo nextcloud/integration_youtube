@@ -1,0 +1,9 @@
+{ "translations": {
+    "No description" : "Без описание",
+    "Bad HTTP method" : "Лош HTTP метод",
+    "Bad credentials" : "Лоши идентификационни данни",
+    "Connected accounts" : "Свързани профили",
+    "Visit" : "Посетете",
+    "API Key" : "API ключ"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

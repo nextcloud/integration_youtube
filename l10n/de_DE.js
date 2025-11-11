@@ -1,8 +1,31 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the Youtube api key" : "YouTube-API-Schlüssel konnte nicht verschlüsselt werden.",
+    "Youtube Link" : "YouTube-Link",
+    "Youtube Channels" : "YouTube-Kanäle",
+    "Youtube Playlists" : "YouTube-Playlisten",
+    "Youtube Videos" : "YouTube-Videos",
     "No description" : "Keine Beschreibung",
+    "Youtube API error" : "YouTube API-Fehler",
+    "Youtube API Key not set" : "Youtube-API-Schlüssel nicht gesetzt",
+    "Could not decrypt the Youtube api key" : "YouTube-API-Schlüssel konnte nicht entschlüsselt werden",
+    "Bad HTTP method" : "Ungültige HTTP-Methode",
     "Bad credentials" : "Falsche Anmeldeinformationen",
-    "Connected accounts" : "Verbundene Konten"
+    "Connected accounts" : "Verbundene Konten",
+    "YouTube Integration" : "YouTube-Einbindung",
+    "Youtube admin options saved" : "Youtube-Administrationseinstellungen gespeichert",
+    "Failed to save Youtube admin options" : "Youtube-Administrationseinstellungen konnten nicht gespeichert werden",
+    "Youtube Integration" : "Youtube-Einbindung",
+    "Enter a Youtube Data API Key below to use the smart picker and the search." : "Unten einen YouTube-Daten-API-Schlüssel eingeben, um den Smart Picker und die Suche zu nutzen.",
+    "Visit" : "Besuchen",
+    "Search and enable \"YouTube Data API v3\"" : "Suchen und aktivieren von \"YouTube Data API v3\".",
+    "Create credentials for Public Data usage" : "Anmeldedaten für die Nutzung öffentlicher Daten erstellen",
+    "Youtube API Key" : "Youtube API-Schlüssel",
+    "API Key" : "API-Schlüssel",
+    "Youtube user options saved" : "Youtube-Benutzereinstellungen gespeichert",
+    "Failed to save Youtube user options" : "Youtube-Benutzereinstellungen konnten nicht gespeichert werden",
+    "Enable searching for Youtube videos/channels/playlists" : "Suche nach Youtube -Videos/Kanälen/Playlists aktivieren",
+    "Warning, everything you type in the search bar will be sent to Youtube." : "Achtung, alles, was Sie in die Suchleiste eingeben, wird an Youtube gesendet."
 },
 "nplurals=2; plural=(n != 1);");
