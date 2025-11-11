@@ -1,11 +1,27 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the Youtube api key" : "無法加密 Youtube API 密鑰",
+    "Could not save the user config" : "無法保存用戶設定",
+    "Youtube Link" : "YouTube 連結",
+    "Youtube Channels" : "YouTube 頻道",
+    "Youtube Playlists" : "YouTube 音樂播放表",
+    "Youtube Videos" : "YouTube 視像",
     "No description" : "沒有描述",
+    "Youtube API error" : "YouTube API 錯誤",
+    "Could not decrypt the Youtube api key" : "無法解密 Youtube API 密鑰",
     "Bad HTTP method" : "不正確的 HTTP 方法",
     "Bad credentials" : "錯誤的身份驗證",
     "Connected accounts" : "已連線的賬號",
+    "YouTube Integration" : "YouTube 整合",
+    "Youtube admin options saved" : "已保存 YouTube 管理選項",
+    "Failed to save Youtube admin options" : "無法保存 YouTube 管理選項",
+    "Youtube Integration" : "YouTube 整合",
     "Visit" : "造訪",
-    "API Key" : "API 密鑰"
+    "Youtube API Key" : "YouTube API 密鑰",
+    "API Key" : "API 密鑰",
+    "Youtube user options saved" : "已保存 YouTube 用戶選項",
+    "Failed to save Youtube user options" : "無法保存 YouTube 用戶選項",
+    "Enable searching for Youtube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋"
 },
 "nplurals=1; plural=0;");
