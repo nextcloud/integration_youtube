@@ -2,6 +2,7 @@ OC.L10N.register(
     "integration_youtube",
     {
     "Could not encrypt the Youtube api key" : "YouTube-API-Schlüssel konnte nicht verschlüsselt werden.",
+    "Could not save the user config" : "Benutzerkonfiguration konnte nicht gespeichert werden",
     "Youtube Link" : "YouTube-Link",
     "Youtube Channels" : "YouTube-Kanäle",
     "Youtube Playlists" : "YouTube-Playlisten",
@@ -14,6 +15,8 @@ OC.L10N.register(
     "Bad credentials" : "Falsche Anmeldeinformationen",
     "Connected accounts" : "Verbundene Konten",
     "YouTube Integration" : "YouTube-Einbindung",
+    "YouTube Integration providing inline video player for link previews" : "YouTube-Einbindung mit Inline-Videoplayer für Link-Vorschauen",
+    "Youtube integration providing an inline video player for link previews, a smart picker and search provider for searching Youtube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> Youtube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "Die YouTube-Einbindung bietet einen integrierten Videoplayer für Link-Vorschauen, eine intelligente Auswahlfunktion und eine Suchfunktion für YouTube-Videos, -Kanäle und -Playlists.\n\nKonfiguration:\n\nEinen API-Schlüssel in den Administrationseinstellungen unter \"Verbundene Konten\" → \"YouTube-Einbindung\" festlegen, um die Suche und den Smart Picker zu aktivieren.\n\nHinweis: Die Such- und Auswahlfunktion ist standardmäßig deaktiviert. Benutzer können sie in ihren jeweiligen Einstellungen aktivieren.",
     "Youtube admin options saved" : "Youtube-Administrationseinstellungen gespeichert",
     "Failed to save Youtube admin options" : "Youtube-Administrationseinstellungen konnten nicht gespeichert werden",
     "Youtube Integration" : "Youtube-Einbindung",

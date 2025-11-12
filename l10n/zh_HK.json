@@ -16,10 +16,12 @@
     "Failed to save Youtube admin options" : "無法保存 YouTube 管理選項",
     "Youtube Integration" : "YouTube 整合",
     "Visit" : "造訪",
+    "Search and enable \"YouTube Data API v3\"" : "搜尋和啟用 \"YouTube Data API v3\"",
     "Youtube API Key" : "YouTube API 密鑰",
     "API Key" : "API 密鑰",
     "Youtube user options saved" : "已保存 YouTube 用戶選項",
     "Failed to save Youtube user options" : "無法保存 YouTube 用戶選項",
-    "Enable searching for Youtube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋"
+    "Enable searching for Youtube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋",
+    "Warning, everything you type in the search bar will be sent to Youtube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
