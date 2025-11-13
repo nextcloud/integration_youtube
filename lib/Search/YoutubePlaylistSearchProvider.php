@@ -41,7 +41,7 @@ class YoutubePlaylistSearchProvider extends YoutubeBaseSearchProvider {
 	 * @inheritDoc
 	 */
 	public function getName(): string {
-		return $this->l10n->t('Youtube Playlists');
+		return $this->l10n->t('YouTube Playlists');
 	}
 
 	/**

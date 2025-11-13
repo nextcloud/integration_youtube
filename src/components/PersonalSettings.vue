@@ -2,17 +2,17 @@
 	<div id="integration_youtube_prefs" class="section">
 		<h2>
 			<YoutubeIcon class="icon" />
-			{{ t('integration_youtube', 'Youtube Integration') }}
+			{{ t('integration_youtube', 'YouTube Integration') }}
 		</h2>
 		<NcCheckboxRadioSwitch
 			:checked.sync="searchEnabled"
 			@update:checked="onSearchChange">
-			{{ t('integration_youtube', 'Enable searching for Youtube videos/channels/playlists') }}
+			{{ t('integration_youtube', 'Enable searching for YouTube videos/channels/playlists') }}
 		</NcCheckboxRadioSwitch>
 		<br>
 		<p v-if="searchEnabled" class="settings-hint">
 			<InformationIcon :size="24" class="icon" />
-			{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to Youtube.') }}
+			{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to YouTube.') }}
 		</p>
 	</div>
 </template>
@@ -66,10 +66,10 @@ export default {
 				if (r.status >= 400) {
 					throw new Error(r.statusText)
 				}
-				showSuccess(t('integration_youtube', 'Youtube user options saved'))
+				showSuccess(t('integration_youtube', 'YouTube user options saved'))
 			}).catch((error) => {
 				showError(
-					t('integration_youtube', 'Failed to save Youtube user options')
+					t('integration_youtube', 'Failed to save YouTube user options')
 					+ ': ' + (error.response ?? ''),
 				)
 				console.error(error)
