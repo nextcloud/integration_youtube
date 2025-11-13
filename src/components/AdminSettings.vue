@@ -2,11 +2,11 @@
 	<div id="integration_youtube_prefs" class="settings-section">
 		<h2>
 			<YoutubeIcon class="icon" :size="32" />
-			{{ t('integration_youtube', 'Youtube Integration') }}
+			{{ t('integration_youtube', 'YouTube Integration') }}
 		</h2>
 		<div id="integration_youtube_content">
 			<p class="line settings-hint">
-				{{ t('integration_youtube', 'Enter a Youtube Data API Key below to use the smart picker and the search.') }}
+				{{ t('integration_youtube', 'Enter a YouTube Data API Key below to use the smart picker and the search.') }}
 			</p>
 			<p class="line settings-hint">
 				{{ t('integration_youtube', "A key can be obtained from Google Developers's Console in three simple steps:") }}
@@ -17,12 +17,12 @@
 				<li>{{ t('integration_youtube', 'Create credentials for Public Data usage') }}</li>
 			</ol>
 			<NcNoteCard type="info">
-				{{ t('integration_youtube', "Note: Youtube search has a quota cost of 100. The default daily quota for Youtube API is 10000, which gives you a total of 100 searches per day.") }}
+				{{ t('integration_youtube', "Note: YouTube search has a quota cost of 100. The default daily quota for YouTube API is 10000, which gives you a total of 100 searches per day.") }}
 			</NcNoteCard>
 			<div class="line">
 				<label for="youtube_token">
 					<KeyIcon :size="20" class="icon" />
-					{{ t('integration_youtube', 'Youtube API Key') }}
+					{{ t('integration_youtube', 'YouTube API Key') }}
 				</label>
 				<input
 					id="youtube_token"
@@ -110,9 +110,9 @@ export default {
 				if (r.status >= 400) {
 					throw new Error(r.statusText)
 				}
-				showSuccess(t('integration_youtube', 'Youtube admin options saved'))
+				showSuccess(t('integration_youtube', 'YouTube admin options saved'))
 			}).catch((error) => {
-				showError(t('integration_youtube', 'Failed to save Youtube admin options')
+				showError(t('integration_youtube', 'Failed to save YouTube admin options')
 					+ ': ' + (error.response?.data?.error ?? ''))
 				console.error(error)
 			}).finally(() => {
