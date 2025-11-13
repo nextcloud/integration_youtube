@@ -2,16 +2,16 @@
 	<div id="integration_youtube_prefs" class="settigs-section">
 		<h2>
 			<YoutubeIcon class="icon" :size="32" />
-			{{ t('integration_youtube', 'Youtube Integration') }}
+			{{ t('integration_youtube', 'YouTube Integration') }}
 		</h2>
 		<div id="integration_youtube_content">
 			<NcCheckboxRadioSwitch
 				:model-value="searchEnabled"
 				@update:model-value="onSearchChange">
-				{{ t('integration_youtube', 'Enable searching for Youtube videos/channels/playlists') }}
+				{{ t('integration_youtube', 'Enable searching for YouTube videos/channels/playlists') }}
 			</NcCheckboxRadioSwitch>
 			<NcNoteCard v-if="searchEnabled" type="warning">
-				{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to Youtube.') }}
+				{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to YouTube.') }}
 			</NcNoteCard>
 		</div>
 	</div>
@@ -67,9 +67,9 @@ export default {
 				if (r.status >= 400) {
 					throw new Error(r.statusText)
 				}
-				showSuccess(t('integration_youtube', 'Youtube user options saved'))
+				showSuccess(t('integration_youtube', 'YouTube user options saved'))
 			}).catch((error) => {
-				showError(t('integration_youtube', 'Failed to save Youtube user options')
+				showError(t('integration_youtube', 'Failed to save YouTube user options')
 					+ ': ' + (error.response?.data?.error ?? ''))
 				console.error(error)
 			})

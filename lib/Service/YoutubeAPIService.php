@@ -115,8 +115,8 @@ class YoutubeAPIService {
 				'nextPageToken' => $response['nextPageToken'],
 			];
 		} catch (Exception $e) {
-			$this->logger->warning('Youtube API error', ['exception' => $e, 'app' => Application::APP_ID]);
-			throw new RuntimeException($this->l10n->t('Youtube API error'));
+			$this->logger->warning('YouTube API error', ['exception' => $e, 'app' => Application::APP_ID]);
+			throw new RuntimeException($this->l10n->t('YouTube API error'));
 		}
 	}
 
@@ -137,14 +137,14 @@ class YoutubeAPIService {
 
 		try {
 			if ($token === '') {
-				return ['error' => $this->l10n->t('Youtube API Key not set')];
+				return ['error' => $this->l10n->t('YouTube API Key not set')];
 			}
 			$token = $this->crypto->decrypt($token);
 			$params['key'] = $token;
 		} catch (Exception $e) {
 			// logger takes care not to leak the secret
 			$this->logger->error('Failed to decrypt the api key', ['exception' => $e]);
-			return ['error' => $this->l10n->t('Could not decrypt the Youtube api key')];
+			return ['error' => $this->l10n->t('Could not decrypt the YouTube api key')];
 		}
 
 		try {
@@ -198,10 +198,10 @@ class YoutubeAPIService {
 			return $body;
 		} catch (ServerException|ClientException $e) {
 			$body = $e->getResponse()->getBody();
-			$this->logger->warning('Youtube API error : ' . $body, ['app' => Application::APP_ID]);
+			$this->logger->warning('YouTube API error : ' . $body, ['app' => Application::APP_ID]);
 			return ['error' => $e->getMessage()];
 		} catch (Exception|Throwable $e) {
-			$this->logger->warning('Youtube API error', ['exception' => $e, 'app' => Application::APP_ID]);
+			$this->logger->warning('YouTube API error', ['exception' => $e, 'app' => Application::APP_ID]);
 			return ['error' => $e->getMessage()];
 		}
 	}

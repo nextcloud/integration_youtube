@@ -70,7 +70,7 @@ abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 		}
 
 		if ($this->appConfig->getAppValueString('token', lazy: true) === '') {
-			$this->logger->warning('Youtube search provider is not configured, set a API Key in the settings');
+			$this->logger->warning('YouTube search provider is not configured, set a API Key in the settings');
 			return SearchResult::complete($this->getName(), []);
 		}
 
