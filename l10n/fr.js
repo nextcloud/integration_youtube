@@ -1,18 +1,18 @@
 OC.L10N.register(
     "integration_youtube",
     {
-    "Youtube Channels" : "Chaines Youtube",
-    "Youtube Playlists" : "Listes de lecture Youtube",
-    "Youtube Videos" : "Vidéos Youtube",
     "No description" : "Pas de description",
     "Bad HTTP method" : "Mauvaise méthode HTTP",
     "Bad credentials" : "Identifiants incorrects",
     "Connected accounts" : "Comptes connectés",
     "YouTube Integration" : "Intégration YouTube",
-    "Youtube Integration" : "Intégration Youtube",
     "Visit" : "Visiter",
-    "Youtube API Key" : "Clé d'API Youtube",
     "API Key" : "Clé API",
+    "Youtube Channels" : "Chaines Youtube",
+    "Youtube Playlists" : "Listes de lecture Youtube",
+    "Youtube Videos" : "Vidéos Youtube",
+    "Youtube Integration" : "Intégration Youtube",
+    "Youtube API Key" : "Clé d'API Youtube",
     "Warning, everything you type in the search bar will be sent to Youtube." : "Attention, tout ce que vous saisissez dans cette barre de recherche sera connu de Youtube"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
