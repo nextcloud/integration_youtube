@@ -84,7 +84,7 @@ class YoutubeReferenceProvider extends ADiscoverableReferenceProvider implements
 	 * @inheritDoc
 	 */
 	public function getTitle(): string {
-		return $this->l10n->t('Youtube Link');
+		return $this->l10n->t('YouTube Link');
 	}
 
 	/**

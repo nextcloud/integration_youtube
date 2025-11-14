@@ -42,7 +42,7 @@ class YoutubeChannelSearchProvider extends YoutubeBaseSearchProvider {
 	 * @inheritDoc
 	 */
 	public function getName(): string {
-		return $this->l10n->t('Youtube Channels');
+		return $this->l10n->t('YouTube Channels');
 	}
 
 	/**

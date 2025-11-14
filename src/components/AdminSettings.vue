@@ -2,10 +2,10 @@
 	<div id="integration_youtube_prefs" class="section">
 		<h2>
 			<YoutubeIcon class="icon" />
-			{{ t('integration_youtube', 'Youtube Integration') }}
+			{{ t('integration_youtube', 'YouTube Integration') }}
 		</h2>
 		<p class="settings-hint">
-			{{ t('integration_youtube', 'Enter a Youtube Data API Key below to use the smart picker and the search.') }}
+			{{ t('integration_youtube', 'Enter a YouTube Data API Key below to use the smart picker and the search.') }}
 		</p>
 		<br>
 		<p class="settings-hint">
@@ -20,14 +20,14 @@
 		</p>
 		<p class="settings-hint">
 			<InformationIcon :size="24" class="icon" />
-			{{ t('integration_youtube', "Note: Youtube search has a quota cost of 100. The default daily quota for Youtube API is 10000, which gives you a total of 100 searches per day.") }}
+			{{ t('integration_youtube', "Note: YouTube search has a quota cost of 100. The default daily quota for YouTube API is 10000, which gives you a total of 100 searches per day.") }}
 		</p>
 		<br>
 		<div id="integration_youtube_content">
 			<div class="line">
 				<label for="youtube_token">
 					<KeyIcon :size="20" class="icon" />
-					{{ t('integration_youtube', 'Youtube API Key') }}
+					{{ t('integration_youtube', 'YouTube API Key') }}
 				</label>
 				<input id="youtube_token"
 					v-model="state.token"
@@ -104,10 +104,10 @@ export default {
 				if (r.status >= 400) {
 					throw new Error(r.statusText)
 				}
-				showSuccess(t('integration_youtube', 'Youtube admin options saved'))
+				showSuccess(t('integration_youtube', 'YouTube admin options saved'))
 			}).catch((error) => {
 				showError(
-					t('integration_youtube', 'Failed to save Youtube admin options')
+					t('integration_youtube', 'Failed to save YouTube admin options')
 					+ ': ' + (error.response ?? ''),
 				)
 				console.error(error)

@@ -100,8 +100,8 @@ class ConfigController extends Controller {
 			} catch (Exception $e) {
 				$this->config->setAppValue(Application::APP_ID, 'token', '');
 				// logger takes care not to leak the secret
-				$this->logger->error('Could not encrypt the Youtube api key', ['exception' => $e]);
-				return new DataResponse(['message' => $this->l->t('Could not encrypt the Youtube api key')]);
+				$this->logger->error('Could not encrypt the YouTube api key', ['exception' => $e]);
+				return new DataResponse(['message' => $this->l->t('Could not encrypt the YouTube api key')]);
 			}
 		}
 		return new DataResponse([]);
