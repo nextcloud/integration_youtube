@@ -9,24 +9,6 @@
     "Visit" : "Cuairt",
     "Search and enable \"YouTube Data API v3\"" : "Cuardaigh agus cumasaigh \"YouTube Data API v3\"",
     "Create credentials for Public Data usage" : "Cruthaigh dintiúir le haghaidh úsáid Sonraí Poiblí",
-    "API Key" : "Eochair API",
-    "Could not encrypt the Youtube api key" : "Níorbh fhéidir eochair API Youtube a chriptiú",
-    "Youtube Link" : "Nasc Youtube",
-    "Youtube Channels" : "Cainéil Youtube",
-    "Youtube Playlists" : "Seinmliostaí Youtube",
-    "Youtube Videos" : "Físeáin Youtube",
-    "Youtube API error" : "Earráid API Youtube",
-    "Youtube API Key not set" : "Níl Eochair API Youtube socraithe",
-    "Could not decrypt the Youtube api key" : "Níorbh fhéidir eochair API Youtube a dhíchriptiú",
-    "Youtube integration providing an inline video player for link previews, a smart picker and search provider for searching Youtube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> Youtube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "Comhtháthú Youtube a sholáthraíonn seinnteoir físe inlíne le haghaidh réamhamhairc nasc, roghnóir cliste agus soláthraí cuardaigh chun físeáin, cainéil agus seinmliostaí Youtube a chuardach.\n\nCumraíocht:\n\nSocraigh eochair API sna socruithe Riaracháin -> Cuntais Ceangailte -> rannán Comhtháthú Youtube chun an cuardach agus an roghnóir cliste a cheadú\n\nNóta: Tá feidhmiúlacht an chuardaigh agus an roghnóra chliste díchumasaithe de réir réamhshocraithe. Is féidir le húsáideoirí rogha a dhéanamh iad a chumasú óna socruithe faoi seach.",
-    "Youtube admin options saved" : "Roghanna riarthóra Youtube sábháilte",
-    "Failed to save Youtube admin options" : "Theip ar roghanna riarthóra Youtube a shábháil",
-    "Youtube Integration" : "Comhtháthú Youtube",
-    "Enter a Youtube Data API Key below to use the smart picker and the search." : "Cuir isteach Eochair API Sonraí Youtube thíos chun an roghnóir cliste agus an cuardach a úsáid.",
-    "Youtube API Key" : "Eochair API Youtube",
-    "Youtube user options saved" : "Roghanna úsáideora Youtube sábháilte",
-    "Failed to save Youtube user options" : "Theip ar roghanna úsáideora Youtube a shábháil",
-    "Enable searching for Youtube videos/channels/playlists" : "Cumasaigh cuardach a dhéanamh ar fhíseáin/chainéil/seinmliostaí Youtube",
-    "Warning, everything you type in the search bar will be sent to Youtube." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig Youtube."
+    "API Key" : "Eochair API"
 },"pluralForm" :"nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);"
 }

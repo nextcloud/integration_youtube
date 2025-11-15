@@ -9,23 +9,6 @@
     "Visit" : "访问",
     "Search and enable \"YouTube Data API v3\"" : "搜索并保存 \"YouTube Data API v3\"",
     "Create credentials for Public Data usage" : "为开放数据使用创建凭证",
-    "API Key" : "API 密匙",
-    "Could not encrypt the Youtube api key" : "无法加密Youtube API密钥",
-    "Youtube Link" : "Youtube链接",
-    "Youtube Channels" : "Youtube频道",
-    "Youtube Playlists" : "Youtube播放清单",
-    "Youtube Videos" : "Youtube视频",
-    "Youtube API error" : "Youtube API 错误",
-    "Youtube API Key not set" : "Youtube API密钥未设置",
-    "Could not decrypt the Youtube api key" : "无法解密Youtube API密钥",
-    "Youtube admin options saved" : "Youtube管理选项已保存",
-    "Failed to save Youtube admin options" : "Youtube管理选项保存失败",
-    "Youtube Integration" : "Youtube整合",
-    "Enter a Youtube Data API Key below to use the smart picker and the search." : "在下面输入Youtube数据API密钥以使用智能选择框和查询",
-    "Youtube API Key" : "Youtube API密钥",
-    "Youtube user options saved" : "Youtube用户选项已保存",
-    "Failed to save Youtube user options" : "Youtube用户选项保存失败",
-    "Enable searching for Youtube videos/channels/playlists" : "启用Youtube视频/频道/播放清单的查找",
-    "Warning, everything you type in the search bar will be sent to Youtube." : "警告，您在搜索框输入的所有的内容都会发送到Youtube。"
+    "API Key" : "API 密匙"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

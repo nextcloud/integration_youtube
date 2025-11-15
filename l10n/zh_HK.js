@@ -9,21 +9,6 @@ OC.L10N.register(
     "YouTube Integration" : "YouTube 整合",
     "Visit" : "造訪",
     "Search and enable \"YouTube Data API v3\"" : "搜尋和啟用 \"YouTube Data API v3\"",
-    "API Key" : "API 密鑰",
-    "Could not encrypt the Youtube api key" : "無法加密 Youtube API 密鑰",
-    "Youtube Link" : "YouTube 連結",
-    "Youtube Channels" : "YouTube 頻道",
-    "Youtube Playlists" : "YouTube 音樂播放表",
-    "Youtube Videos" : "YouTube 視像",
-    "Youtube API error" : "YouTube API 錯誤",
-    "Could not decrypt the Youtube api key" : "無法解密 Youtube API 密鑰",
-    "Youtube admin options saved" : "已保存 YouTube 管理選項",
-    "Failed to save Youtube admin options" : "無法保存 YouTube 管理選項",
-    "Youtube Integration" : "YouTube 整合",
-    "Youtube API Key" : "YouTube API 密鑰",
-    "Youtube user options saved" : "已保存 YouTube 用戶選項",
-    "Failed to save Youtube user options" : "無法保存 YouTube 用戶選項",
-    "Enable searching for Youtube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋",
-    "Warning, everything you type in the search bar will be sent to Youtube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube"
+    "API Key" : "API 密鑰"
 },
 "nplurals=1; plural=0;");
