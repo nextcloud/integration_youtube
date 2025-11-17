@@ -1,3 +1,16 @@
+## 0.4.1 – 2025-11-17
+
+### Changed
+- Standardize 'YouTube' spelling (#42) @rakekniven @kyteinsky
+- Lower max supported version to NC 31
+
+### Fixed
+- fix: referrer policy in youtube iframe for error 153 @kyteinsky
+
+### Added
+- i18n translation strings
+
+
 ## 0.4.0 – 2025-07-28
 
 ### Changed
