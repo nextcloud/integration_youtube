@@ -1,3 +1,9 @@
+## 0.6.1 – 2025-11-17
+
+### Fixed
+- fix referrer policy in youtube iframe for error 153 (#44) @kyteinsky
+
+
 ## 0.6.0 – 2025-11-17
 
 ### Changed
