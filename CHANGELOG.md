@@ -1,3 +1,12 @@
+## 0.6.0 – 2025-11-17
+
+### Changed
+- Standardize 'YouTube' spelling (#40) @rakekniven
+
+### Added
+- i18n translation strings
+
+
 ## 0.5.0 – 2025-10-06
 
 ### Changed
