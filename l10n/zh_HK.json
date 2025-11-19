@@ -1,12 +1,31 @@
 { "translations": {
+    "Could not encrypt the YouTube api key" : "無法加密 YouTube API 密鑰",
     "Could not save the user config" : "無法保存用戶設定",
+    "YouTube Link" : "YouTube 連結",
+    "YouTube Channels" : "YouTube 頻道",
+    "YouTube Playlists" : "YouTube 播放清單",
+    "YouTube Videos" : "YouTube 影片",
     "No description" : "沒有描述",
+    "YouTube API error" : "YouTube API 錯誤",
+    "YouTube API Key not set" : "未設定 YouTube API 密鑰",
+    "Could not decrypt the YouTube api key" : "無法解密 YouTube API 密鑰",
     "Bad HTTP method" : "不正確的 HTTP 方法",
     "Bad credentials" : "錯誤的身份驗證",
     "Connected accounts" : "已連線的賬號",
     "YouTube Integration" : "YouTube 整合",
+    "YouTube Integration providing inline video player for link previews" : "YouTube 整合為連結預覽提供行內影片播放程式",
+    "YouTube integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> YouTube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "YouTube 整合為連結預覽提供行內影片播放程式；同時包含智慧型挑選程式與搜尋提供者，可搜尋 YouTube 影片、頻道與播放清單。\n\n設定：\n\n在管理設定→已連結的帳號→YouTube 整合區塊設定 API 金鑰以啟用搜尋與智慧型挑選程式\n\n注意：搜尋與智慧型挑選程式功能預設停用。使用者可透過各自的設定選項主動啟用這些功能。",
+    "YouTube admin options saved" : "已保存 YouTube 管理選項",
+    "Failed to save YouTube admin options" : "無法保存 YouTube 管理選項",
+    "Enter a YouTube Data API Key below to use the smart picker and the search." : "在下方輸入 YouTube Data API 密鑰以使用智慧型挑選程式與搜尋。",
     "Visit" : "造訪",
     "Search and enable \"YouTube Data API v3\"" : "搜尋和啟用 \"YouTube Data API v3\"",
-    "API Key" : "API 密鑰"
+    "Create credentials for Public Data usage" : "建立公共資料使用憑證",
+    "YouTube API Key" : "YouTube API 密鑰",
+    "API Key" : "API 密鑰",
+    "YouTube user options saved" : "已保存 YouTube 用戶選項",
+    "Failed to save YouTube user options" : "無法保存 YouTube 用戶選項",
+    "Enable searching for YouTube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube。"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
