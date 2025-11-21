@@ -143,8 +143,8 @@ class YoutubeAPIService {
 			$params['key'] = $token;
 		} catch (Exception $e) {
 			// logger takes care not to leak the secret
-			$this->logger->error('Failed to decrypt the api key', ['exception' => $e]);
-			return ['error' => $this->l10n->t('Could not decrypt the YouTube api key')];
+			$this->logger->error('Failed to decrypt the API key', ['exception' => $e]);
+			return ['error' => $this->l10n->t('Could not decrypt the YouTube API key')];
 		}
 
 		try {
