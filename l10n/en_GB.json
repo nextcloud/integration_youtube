@@ -1,5 +1,4 @@
 { "translations": {
-    "Could not encrypt the YouTube api key" : "Could not encrypt the YouTube API key",
     "Could not save the user config" : "Could not save the user config",
     "YouTube Link" : "YouTube Link",
     "YouTube Channels" : "YouTube Channels",
@@ -8,7 +7,6 @@
     "No description" : "No description",
     "YouTube API error" : "YouTube API error",
     "YouTube API Key not set" : "YouTube API Key not set",
-    "Could not decrypt the YouTube api key" : "Could not decrypt the YouTube api key",
     "Bad HTTP method" : "Bad HTTP method",
     "Bad credentials" : "Bad credentials",
     "Connected accounts" : "Connected accounts",

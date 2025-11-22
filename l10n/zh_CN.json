@@ -1,5 +1,4 @@
 { "translations": {
-    "Could not encrypt the YouTube api key" : "无法加密YouTube API密钥",
     "Could not save the user config" : "无法保存用户配置",
     "YouTube Link" : "YouTube链接",
     "YouTube Channels" : "YouTube频道",
@@ -8,7 +7,6 @@
     "No description" : "没有描述",
     "YouTube API error" : "YouTube API 错误",
     "YouTube API Key not set" : "YouTube API 密钥未设置",
-    "Could not decrypt the YouTube api key" : "无法解密YouTube API密钥",
     "Bad HTTP method" : "错误的 HTTP 方法",
     "Bad credentials" : "错误的凭据",
     "Connected accounts" : "已关联的账号",
