@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the YouTube API key" : "Níorbh fhéidir eochair API YouTube a chriptiú",
     "Could not save the user config" : "Níorbh fhéidir cumraíocht an úsáideora a shábháil",
     "YouTube Link" : "Nasc YouTube",
     "YouTube Channels" : "Cainéil YouTube",
@@ -9,6 +10,7 @@ OC.L10N.register(
     "No description" : "Gan cur síos",
     "YouTube API error" : "Earráid API YouTube",
     "YouTube API Key not set" : "Níl Eochair API YouTube socraithe",
+    "Could not decrypt the YouTube API key" : "Níorbh fhéidir eochair API YouTube a dhíchriptiú",
     "Bad HTTP method" : "Droch-mhodh HTTP",
     "Bad credentials" : "Dintiúir dona",
     "Connected accounts" : "Cuntais nasctha",
