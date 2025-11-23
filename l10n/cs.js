@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the YouTube API key" : "Nebylo možné zašifrovat klíč k YouTube API",
     "Could not save the user config" : "Nebylo možné uložit nastavení uživatele",
     "YouTube Link" : "Odkaz na YouTube",
     "YouTube Channels" : "YouTube kanály",
@@ -9,6 +10,7 @@ OC.L10N.register(
     "No description" : "Bez popisu",
     "YouTube API error" : "Chyba YouTube API",
     "YouTube API Key not set" : "Klíč k YouTube API nenastaven",
+    "Could not decrypt the YouTube API key" : "Nebylo možné rozšifrovat klíč k YouTube API",
     "Bad HTTP method" : "Nesprávná HTTP metoda",
     "Bad credentials" : "Nesprávné přihlašovací údaje",
     "Connected accounts" : "Propojené účty",

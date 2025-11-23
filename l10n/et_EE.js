@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the YouTube API key" : "Youtube'i API võtme krüptimine ei õnnestunud",
     "Could not save the user config" : "Kasutaja seadistuste salvestamine ei õnnestunud",
     "YouTube Link" : "Youtube'i link",
     "YouTube Channels" : "Youtube'i kanalid",
@@ -9,6 +10,7 @@ OC.L10N.register(
     "No description" : "Kirjeldus puudub",
     "YouTube API error" : "Youtube'i API viga",
     "YouTube API Key not set" : "Youtube'i API võti on sisestamata",
+    "Could not decrypt the YouTube API key" : "Youtube'i API võtme dekrüptimine ei õnnestunud",
     "Bad HTTP method" : "Vigane HTTP-meetod",
     "Bad credentials" : "Vale kasutajanimi, salasõna või tunnusluba",
     "Connected accounts" : "Ühendatud kasutajakontod",
