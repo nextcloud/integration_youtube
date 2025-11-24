@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the YouTube API key" : "Could not encrypt the YouTube API key",
     "Could not save the user config" : "Could not save the user config",
     "YouTube Link" : "YouTube Link",
     "YouTube Channels" : "YouTube Channels",
@@ -9,6 +10,7 @@ OC.L10N.register(
     "No description" : "No description",
     "YouTube API error" : "YouTube API error",
     "YouTube API Key not set" : "YouTube API Key not set",
+    "Could not decrypt the YouTube API key" : "Could not decrypt the YouTube API key",
     "Bad HTTP method" : "Bad HTTP method",
     "Bad credentials" : "Bad credentials",
     "Connected accounts" : "Connected accounts",

@@ -5,7 +5,13 @@ OC.L10N.register(
     "Bad HTTP method" : "옳지 않은 HTTP 메소드",
     "Bad credentials" : "옳지 않은 자격 증명",
     "Connected accounts" : "계정 연결됨",
+    "YouTube admin options saved" : "YouTube 관리자 옵션 저장됨",
+    "Failed to save YouTube admin options" : "YouTube 관리자 옵션을 저장하는데 실패했습니다",
     "Visit" : "방문하기",
-    "API Key" : "API 키"
+    "YouTube API Key" : "YouTube API 키",
+    "API Key" : "API 키",
+    "YouTube user options saved" : "YouTube 사용자 옵션 저장됨",
+    "Failed to save YouTube user options" : "YouTube 사용자 옵션을 저장하는데 실패했습니다",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "주의, 검색 바에 입력한 모든 것이 YouTube로 보내집니다."
 },
 "nplurals=1; plural=0;");
