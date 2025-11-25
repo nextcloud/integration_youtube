@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "Could not encrypt the YouTube API key" : "無法加密 YouTube API 金鑰",
     "Could not save the user config" : "無法儲存使用者設定",
     "YouTube Link" : "YouTube 連結",
     "YouTube Channels" : "YouTube 頻道",
@@ -9,6 +10,7 @@ OC.L10N.register(
     "No description" : "無描述",
     "YouTube API error" : "YouTube API 錯誤",
     "YouTube API Key not set" : "未設定 YouTube API 金鑰",
+    "Could not decrypt the YouTube API key" : "無法解密 YouTube API 金鑰",
     "Bad HTTP method" : "錯誤的 HTTP 方法",
     "Bad credentials" : "錯誤的憑證",
     "Connected accounts" : "已連結的帳號",

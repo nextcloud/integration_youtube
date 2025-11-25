@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "No description" : "No description",
     "Bad HTTP method" : "Njia mbaya ya HTTP ",
     "Bad credentials" : "Sifa mbaya",
     "Connected accounts" : "Akaunti zilizounganishwa",
