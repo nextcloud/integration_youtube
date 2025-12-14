@@ -21,6 +21,13 @@ OC.L10N.register(
     "Failed to save YouTube admin options" : "YouTube yönetici ayarları kaydedilemedi",
     "Enter a YouTube Data API Key below to use the smart picker and the search." : "Akıllı seçiciyi ve aramayı kullanmak için aşağıya bir YouTube Data API anahtarı yazın.",
     "Visit" : "Git",
-    "API Key" : "API anahtarı"
+    "Search and enable \"YouTube Data API v3\"" : "\"YouTube Data API v3\" ögesini arayın ve etkinleştirin",
+    "Create credentials for Public Data usage" : "Herkese açık veri kullanımı için kimlik doğrulama bilgileri oluşturun",
+    "YouTube API Key" : "YouTube API anahtarı",
+    "API Key" : "API anahtarı",
+    "YouTube user options saved" : "YouTube kullanıcı ayarları kaydedildi",
+    "Failed to save YouTube user options" : "YouTube kullanıcı ayarları kaydedilemedi",
+    "Enable searching for YouTube videos/channels/playlists" : "YouTube video/kanal/oynatma listesi aramayı aç",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Uyarı, arama çubuğuna yazdığınız her şey YouTube üzerine gönderilecek."
 },
 "nplurals=2; plural=(n > 1);");
