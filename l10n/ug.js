@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "No description" : "چۈشەندۈرۈش يوق",
     "Bad HTTP method" : "ناچار HTTP ئۇسۇلى",
     "Bad credentials" : "ناچار كىنىشكا",
     "Connected accounts" : "ئۇلانغان ھېساباتلار",
