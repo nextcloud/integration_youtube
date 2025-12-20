@@ -1,9 +1,31 @@
 { "translations": {
+    "Could not encrypt the YouTube API key" : "YouTube API ئاچقۇچىنى شىفىرلىيالمىدى",
+    "Could not save the user config" : "ئىشلەتكۈچى سەپلىمىسىنى ساقلىيالمىدى",
+    "YouTube Link" : "YouTube ئۇلانمىسى",
+    "YouTube Channels" : "YouTube قاناللىرى",
+    "YouTube Playlists" : "YouTube قۇيۇش تىزىملىكلىرى",
+    "YouTube Videos" : "YouTube سىنلىرى",
     "No description" : "چۈشەندۈرۈش يوق",
+    "YouTube API error" : "YouTube API خاتالىقى",
+    "YouTube API Key not set" : "YouTube API ئاچقۇچى تېخى بېكىتىلمىدى",
+    "Could not decrypt the YouTube API key" : "YouTube API ئاچقۇچىنىڭ شىفىرىنى يىشەلمىدى",
     "Bad HTTP method" : "ناچار HTTP ئۇسۇلى",
     "Bad credentials" : "ناچار كىنىشكا",
     "Connected accounts" : "ئۇلانغان ھېساباتلار",
+    "YouTube Integration" : "YouTube بىرلەشتۈرۈش",
+    "YouTube Integration providing inline video player for link previews" : "YouTube بىرلەشتۈرۈش ئۇلىنىشنى ئالدىن-كۆرۈش ئۈچۈن ئىچكىي سىن قويغۇچ بىلەن تەمىنلەيدۇ",
+    "YouTube integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> YouTube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "YouTube بىر گەۋدىلەشتۈرۈش ئۇلىنىش ئالدىن كۆرۈش ئۈچۈن ئىچكى سىن قويغۇچ، YouTube سىنلىرى، قاناللىرى ۋە قويۇش تىزىملىكىنى ئىزدەش ئۈچۈن ئەقلىي تاللىغۇچ ۋە ئىزدەش تەمىنلىگۈچىسى بىلەن تەمىنلەيدۇ.تەڭشەش:ئىزدەش ۋە ئەقلىي تاللىغۇچقا يول قويۇش ئۈچۈن باشقۇرۇش تەڭشەكلىرى -> باغلىنىشلىق ھېساباتلار -> YouTube بىر گەۋدىلەشتۈرۈش بۆلىكىدە API ئاچقۇچىنى تەڭشەڭ.ئەسكەرتىش: ئىزدەش ۋە ئەقلىي تاللىغۇچ ئىقتىدارى ئۆزلۈكىدىن چەكلىنىدۇ. ئىشلەتكۈچىلەر ئۆزلىرىنىڭ تەڭشەكلىرىدىن ئۇلارنى قوزغىتىشنى تاللىسا بولىدۇ.",
+    "YouTube admin options saved" : "YouTube باشقۇرغۇچى تاللانمىلىرى ساقلاندى",
+    "Failed to save YouTube admin options" : "YouTube باشقۇرغۇچى تاللانمىلىرىنى ساقلاش مەغلۇپ بولدى",
+    "Enter a YouTube Data API Key below to use the smart picker and the search." : "ئەقىللىق تاللىغۇچنى ھەمدە ئىزدەشنى ئىشلىتىش ئۈچۈن YouTube سانلىق-مەلۇمات API ئاچقۇچىنى ئاستىغا كىرگۈزۈڭ",
     "Visit" : "زىيارەت قىلىڭ",
-    "API Key" : "API ئاچقۇچى"
+    "Search and enable \"YouTube Data API v3\"" : "\"YouTube Data API v3\" نى ئىزدە ھەمدە قوزغات",
+    "Create credentials for Public Data usage" : "ئاممىۋىي ئۇچۇرنى ئىشلىتىش ئۈچۈن ھېسابات قۇر",
+    "YouTube API Key" : "YouTube API ئاچقۇچى",
+    "API Key" : "API ئاچقۇچى",
+    "YouTube user options saved" : "YouTube ئىشلەتكۈچى تاللانمىلىرى ساقلاندى",
+    "Failed to save YouTube user options" : "YouTube ئىشلەتكۈچى تاللانمىلىرىنى ساقلاش مەغلۇپ بولدى",
+    "Enable searching for YouTube videos/channels/playlists" : "يۇتۇب سىنلار/قاناللار/قۇيۇش تىزىملىكلىرىنى ئىزدەشنى قوزغات",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "ئاگاھلاندۇرۇش، ئىزدەش بالدىقىدا يازغان ھەممە نەرسە يۇتۇبقا يوللىنىلىدۇ."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
