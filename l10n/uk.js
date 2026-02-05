@@ -2,7 +2,7 @@ OC.L10N.register(
     "integration_youtube",
     {
     "Bad HTTP method" : "Поганий метод HTTP",
-    "Bad credentials" : "Погані дані авторизації",
+    "Bad credentials" : "Неправильні дані авторизації",
     "Connected accounts" : "Підключені облікові записи",
     "Visit" : "Відвідати",
     "API Key" : "Ключ API"
