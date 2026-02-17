@@ -5,11 +5,13 @@
 			{{ t('integration_youtube', 'YouTube Integration') }}
 		</h2>
 		<div id="integration_youtube_content">
-			<NcCheckboxRadioSwitch
-				:model-value="searchEnabled"
-				@update:model-value="onSearchChange">
-				{{ t('integration_youtube', 'Enable searching for YouTube videos/channels/playlists') }}
-			</NcCheckboxRadioSwitch>
+			<NcFormBox>
+				<NcFormBoxSwitch
+					:model-value="searchEnabled"
+					@update:model-value="onSearchChange">
+					{{ t('integration_youtube', 'Enable searching for YouTube videos/channels/playlists') }}
+				</NcFormBoxSwitch>
+			</NcFormBox>
 			<NcNoteCard v-if="searchEnabled" type="warning">
 				{{ t('integration_youtube', 'Warning, everything you type in the search bar will be sent to YouTube.') }}
 			</NcNoteCard>
@@ -22,7 +24,8 @@ import axios from '@nextcloud/axios'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcFormBox from '@nextcloud/vue/components/NcFormBox'
+import NcFormBoxSwitch from '@nextcloud/vue/components/NcFormBoxSwitch'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import YoutubeIcon from './icons/YoutubeIcon.vue'
 
@@ -30,7 +33,8 @@ export default {
 	name: 'PersonalSettings',
 
 	components: {
-		NcCheckboxRadioSwitch,
+		NcFormBox,
+		NcFormBoxSwitch,
 		NcNoteCard,
 		YoutubeIcon,
 	},
@@ -40,7 +44,6 @@ export default {
 			state: loadState('integration_youtube', 'user-config'),
 			// to prevent some browsers to fill fields with remembered passwords
 			readonly: true,
-			timeout: null,
 		}
 	},
 

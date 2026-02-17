@@ -5,33 +5,37 @@
 			{{ t('integration_youtube', 'YouTube Integration') }}
 		</h2>
 		<div id="integration_youtube_content">
-			<p class="line settings-hint">
+			<p class="line gap-bottom">
 				{{ t('integration_youtube', 'Enter a YouTube Data API Key below to use the smart picker and the search.') }}
 			</p>
-			<p class="line settings-hint">
+			<p class="line">
 				{{ t('integration_youtube', "A key can be obtained from Google Developers's Console in three simple steps:") }}
 			</p>
-			<ol type="1">
-				<li>{{ t('integration_youtube', 'Visit') }} <a href="https://console.cloud.google.com" target="_blank">https://console.cloud.google.com</a></li>
-				<li>{{ t('integration_youtube', 'Search and enable "YouTube Data API v3"') }}</li>
-				<li>{{ t('integration_youtube', 'Create credentials for Public Data usage') }}</li>
-			</ol>
+			<div class="line">
+				<ol type="1">
+					<li>{{ t('integration_youtube', 'Visit') }} <a href="https://console.cloud.google.com" target="_blank">https://console.cloud.google.com</a></li>
+					<li>{{ t('integration_youtube', 'Search and enable "YouTube Data API v3"') }}</li>
+					<li>{{ t('integration_youtube', 'Create credentials for Public Data usage') }}</li>
+				</ol>
+			</div>
 			<NcNoteCard type="info">
-				{{ t('integration_youtube', "Note: YouTube search has a quota cost of 100. The default daily quota for YouTube API is 10000, which gives you a total of 100 searches per day.") }}
+				{{ t('integration_youtube', "Note: YouTube search has a quota cost of 100. The default daily quota for YouTube API is 10000, which boils down to a total of 100 searches per day.") }}
 			</NcNoteCard>
 			<div class="line">
-				<label for="youtube_token">
-					<KeyIcon :size="20" class="icon" />
-					{{ t('integration_youtube', 'YouTube API Key') }}
-				</label>
-				<input
-					id="youtube_token"
+				<NcTextField
 					v-model="state.token"
+					class="token-field"
 					type="password"
+					:label="t('integration_youtube', 'YouTube API Key')"
 					:readonly="readonly"
-					:placeholder="t('integration_youtube', 'API Key')"
+					:show-trailing-button="state.token !== ''"
+					@trailing-button-click="state.token = ''; onSensitiveInput()"
 					@focus="readonly = false"
-					@input="onSensitiveInput">
+					@update:model-value="onSensitiveInput">
+					<template #icon>
+						<KeyIcon :size="20" class="icon" />
+					</template>
+				</NcTextField>
 				<NcLoadingIcon v-if="loading" :size="20" class="icon" />
 			</div>
 		</div>
@@ -46,19 +50,9 @@ import { confirmPassword } from '@nextcloud/password-confirmation'
 import { generateUrl } from '@nextcloud/router'
 import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
 import KeyIcon from './icons/KeyIcon.vue'
 import YoutubeIcon from './icons/YoutubeIcon.vue'
-
-let timeout
-/**
- *
- * @param {Function} fn function to debounce
- * @param {number} ms milliseconds to wait, default 2000
- */
-function debounce(fn, ms = 2000) {
-	clearTimeout(timeout)
-	timeout = setTimeout(fn, ms)
-}
 
 export default {
 	name: 'AdminSettings',
@@ -68,6 +62,7 @@ export default {
 		YoutubeIcon,
 		NcNoteCard,
 		NcLoadingIcon,
+		NcTextField,
 	},
 
 	data() {
@@ -81,8 +76,13 @@ export default {
 	},
 
 	methods: {
+		debounce(fn, ms = 2000) {
+			clearTimeout(this.timeout)
+			this.timeout = setTimeout(fn, ms)
+		},
+
 		onSensitiveInput() {
-			debounce(() => {
+			this.debounce(() => {
 				this.saveOptions(true)
 			})
 		},
@@ -99,25 +99,26 @@ export default {
 				return
 			}
 
-			if (confirm) {
-				await confirmPassword()
-				url = generateUrl('/apps/integration_youtube/admin-config-password-confirm')
-			} else {
-				url = generateUrl('/apps/integration_youtube/admin-config')
-			}
+			try {
+				if (confirm) {
+					await confirmPassword()
+					url = generateUrl('/apps/integration_youtube/admin-config-password-confirm')
+				} else {
+					url = generateUrl('/apps/integration_youtube/admin-config')
+				}
 
-			axios.put(url, { values }).then((r) => {
+				const r = await axios.put(url, { values })
 				if (r.status >= 400) {
 					throw new Error(r.statusText)
 				}
 				showSuccess(t('integration_youtube', 'YouTube admin options saved'))
-			}).catch((error) => {
+			} catch (error) {
 				showError(t('integration_youtube', 'Failed to save YouTube admin options')
-					+ ': ' + (error.response?.data?.error ?? ''))
+					+ ': ' + (error.response?.data?.error ?? error.message ?? ''))
 				console.error(error)
-			}).finally(() => {
+			} finally {
 				this.loading = false
-			})
+			}
 		},
 	},
 }
@@ -148,7 +149,7 @@ export default {
 		margin: 0 8px 0 12px;
 	}
 
-	.settings-hint {
+	.settings-hint, .token-field {
 		margin-top: 0 !important;
 	}
 
@@ -158,9 +159,13 @@ export default {
 			display: flex;
 			align-items: center;
 		}
-		> input {
+		> .token-field {
 			width: 300px;
 		}
+	}
+
+	.gap-bottom {
+		margin-bottom: 8px;
 	}
 
 	a {

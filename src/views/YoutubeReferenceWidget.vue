@@ -25,7 +25,7 @@
 		class="non-interactive-widget"
 		:reference="reference" />
 	<iframe
-		v-if="interactive"
+		v-else-if="interactive"
 		width="100%"
 		height="315"
 		:src="youtubeEmbed"
@@ -33,6 +33,9 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		referrerpolicy="strict-origin-when-cross-origin"
 		allowfullscreen />
+	<div v-else>
+		{{ t('integration_youtube', 'No video reference found') }}
+	</div>
 </template>
 
 <script>
