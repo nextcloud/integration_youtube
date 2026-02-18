@@ -5,7 +5,7 @@
 		"nextcloud/coding-standard": "^1.1",
 		"friendsofphp/php-cs-fixer": "^3.38",
 		"guzzlehttp/guzzle": "^7.5.0",
-		"psalm/phar": "^6.4.0"
+		"vimeo/psalm": "^6.15.1"
 	},
 	"config": {
 		"optimize-autoloader": true,
@@ -19,11 +19,11 @@
 
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
-		"psalm": "psalm.phar",
-		"psalm:ci": "psalm.phar --threads=1",
-		"psalm:clear": "psalm.phar --clear-cache && psalm.phar --clear-global-cache",
-		"psalm:update-baseline": "psalm.phar --update-baseline",
-		"psalm:fix": "psalm.phar --alter --issues=InvalidReturnType,InvalidNullableReturnType,MismatchingDocblockParamType,MismatchingDocblockReturnType,MissingParamType,InvalidFalsableReturnType"
+		"psalm": "psalm",
+		"psalm:ci": "psalm --threads=1",
+		"psalm:clear": "psalm --clear-cache && psalm --clear-global-cache",
+		"psalm:update-baseline": "psalm --update-baseline",
+		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MismatchingDocblockParamType,MismatchingDocblockReturnType,MissingParamType,InvalidFalsableReturnType"
 	},
 	"require": {
 		"php": "^8.1 || ^8.2 || ^8.3 || ^8.4"
