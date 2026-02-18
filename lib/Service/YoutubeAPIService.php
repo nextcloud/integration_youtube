@@ -198,7 +198,7 @@ class YoutubeAPIService {
 			return $body;
 		} catch (ServerException|ClientException $e) {
 			$body = $e->getResponse()->getBody();
-			$this->logger->warning('YouTube API error : ' . $body, ['app' => Application::APP_ID]);
+			$this->logger->warning('YouTube API error', ['app' => Application::APP_ID, 'exception' => $e, 'response' => $body]);
 			return ['error' => $e->getMessage()];
 		} catch (Exception|Throwable $e) {
 			$this->logger->warning('YouTube API error', ['exception' => $e, 'app' => Application::APP_ID]);
