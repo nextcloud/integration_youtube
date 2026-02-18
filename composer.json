@@ -1,11 +1,11 @@
 {
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
-		"nextcloud/ocp": "dev-master",
+		"nextcloud/ocp": "dev-stable32",
 		"nextcloud/coding-standard": "^1.1",
 		"friendsofphp/php-cs-fixer": "^3.38",
 		"guzzlehttp/guzzle": "^7.5.0",
-		"psalm/phar": "6.4.0"
+		"psalm/phar": "^6.4.0"
 	},
 	"config": {
 		"optimize-autoloader": true,
