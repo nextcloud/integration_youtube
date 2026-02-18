@@ -24,10 +24,10 @@ OC.L10N.register(
     "Search and enable \"YouTube Data API v3\"" : "\"YouTube Data API v3\" نى ئىزدە ھەمدە قوزغات",
     "Create credentials for Public Data usage" : "ئاممىۋىي ئۇچۇرنى ئىشلىتىش ئۈچۈن ھېسابات قۇر",
     "YouTube API Key" : "YouTube API ئاچقۇچى",
-    "API Key" : "API ئاچقۇچى",
     "YouTube user options saved" : "YouTube ئىشلەتكۈچى تاللانمىلىرى ساقلاندى",
     "Failed to save YouTube user options" : "YouTube ئىشلەتكۈچى تاللانمىلىرىنى ساقلاش مەغلۇپ بولدى",
     "Enable searching for YouTube videos/channels/playlists" : "يۇتۇب سىنلار/قاناللار/قۇيۇش تىزىملىكلىرىنى ئىزدەشنى قوزغات",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "ئاگاھلاندۇرۇش، ئىزدەش بالدىقىدا يازغان ھەممە نەرسە يۇتۇبقا يوللىنىلىدۇ."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "ئاگاھلاندۇرۇش، ئىزدەش بالدىقىدا يازغان ھەممە نەرسە يۇتۇبقا يوللىنىلىدۇ.",
+    "API Key" : "API ئاچقۇچى"
 },
 "nplurals=2; plural=(n != 1);");

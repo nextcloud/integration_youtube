@@ -22,10 +22,10 @@
     "Search and enable \"YouTube Data API v3\"" : "Otsi ja lülita sisse „YouTube Data API v3“",
     "Create credentials for Public Data usage" : "Lisa autentimine Public Data kasutuse jaoks",
     "YouTube API Key" : "Youtube'i API võti",
-    "API Key" : "API võti",
     "YouTube user options saved" : "Youtube'i kasutajavalikud on salvestatud",
     "Failed to save YouTube user options" : "Youtube'i kasutajavalikute salvestamine ei õnnestunud",
     "Enable searching for YouTube videos/channels/playlists" : "Lülita Youtube'i videote, kanalite ja esitusloendite otsing sisse",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Hoiatus: kõik sinu sisestatu saadetakse Youtube'i teenusesse."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Hoiatus: kõik sinu sisestatu saadetakse Youtube'i teenusesse.",
+    "API Key" : "API võti"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

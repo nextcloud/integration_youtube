@@ -22,10 +22,10 @@
     "Search and enable \"YouTube Data API v3\"" : "搜尋和啟用 \"YouTube Data API v3\"",
     "Create credentials for Public Data usage" : "建立公共資料使用憑證",
     "YouTube API Key" : "YouTube API 密鑰",
-    "API Key" : "API 密鑰",
     "YouTube user options saved" : "已保存 YouTube 用戶選項",
     "Failed to save YouTube user options" : "無法保存 YouTube 用戶選項",
     "Enable searching for YouTube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube。"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube。",
+    "API Key" : "API 密鑰"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

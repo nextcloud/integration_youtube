@@ -22,10 +22,10 @@
     "Search and enable \"YouTube Data API v3\"" : "Procure e ative \"YouTube Data API v3\"",
     "Create credentials for Public Data usage" : "Crie credenciais para uso de Dados Públicos",
     "YouTube API Key" : "Chave API do YouTube",
-    "API Key" : "Chave API",
     "YouTube user options saved" : "Opções de usuário do YouTube salvas",
     "Failed to save YouTube user options" : "Falha ao salvar as opções de usuário do YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Ativar a pesquisa de vídeos/canais/playlists do YouTube",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Atenção, tudo o que você digitar na barra de pesquisa será enviado ao YouTube."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Atenção, tudo o que você digitar na barra de pesquisa será enviado ao YouTube.",
+    "API Key" : "Chave API"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
