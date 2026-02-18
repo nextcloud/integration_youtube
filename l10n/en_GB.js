@@ -24,10 +24,10 @@ OC.L10N.register(
     "Search and enable \"YouTube Data API v3\"" : "Search and enable \"YouTube Data API v3\"",
     "Create credentials for Public Data usage" : "Create credentials for Public Data usage",
     "YouTube API Key" : "YouTube API Key",
-    "API Key" : "API Key",
     "YouTube user options saved" : "YouTube user options saved",
     "Failed to save YouTube user options" : "Failed to save YouTube user options",
     "Enable searching for YouTube videos/channels/playlists" : "Enable searching for YouTube videos/channels/playlists",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Warning, everything you type in the search bar will be sent to YouTube."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Warning, everything you type in the search bar will be sent to YouTube.",
+    "API Key" : "API Key"
 },
 "nplurals=2; plural=(n != 1);");

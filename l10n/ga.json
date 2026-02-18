@@ -22,10 +22,10 @@
     "Search and enable \"YouTube Data API v3\"" : "Cuardaigh agus cumasaigh \"YouTube Data API v3\"",
     "Create credentials for Public Data usage" : "Cruthaigh dintiúir le haghaidh úsáid Sonraí Poiblí",
     "YouTube API Key" : "Eochair API YouTube",
-    "API Key" : "Eochair API",
     "YouTube user options saved" : "Roghanna úsáideora YouTube sábháilte",
     "Failed to save YouTube user options" : "Theip ar roghanna úsáideora YouTube a shábháil",
     "Enable searching for YouTube videos/channels/playlists" : "Cumasaigh cuardach a dhéanamh ar fhíseáin/chainéil/seinmliostaí YouTube",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig YouTube."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig YouTube.",
+    "API Key" : "Eochair API"
 },"pluralForm" :"nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);"
 }

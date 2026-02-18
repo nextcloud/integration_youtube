@@ -21,10 +21,10 @@
     "Search and enable \"YouTube Data API v3\"" : "Vyhledejte a zapněte „YouTube Data API v3“",
     "Create credentials for Public Data usage" : "Vytvořit přihlašovací údaje pro využití veřejných dat",
     "YouTube API Key" : "Klíč k YouTube API",
-    "API Key" : "Klíč k API",
     "YouTube user options saved" : "Uživatelské předvolby pro YouTube uloženy",
     "Failed to save YouTube user options" : "Nepodařilo se uložit uživatelské předvolby pro YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Zapnout vyhledávání videí/kanálů/seznamů na YouTube",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Varování – cokoli zadáte do kolonky vyhledávání bude odesláno službě YouTube."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Varování – cokoli zadáte do kolonky vyhledávání bude odesláno službě YouTube.",
+    "API Key" : "Klíč k API"
 },"pluralForm" :"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;"
 }
