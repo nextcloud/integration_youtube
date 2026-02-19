@@ -28,6 +28,7 @@ OC.L10N.register(
     "Failed to save YouTube user options" : "Youtube'i kasutajavalikute salvestamine ei õnnestunud",
     "Enable searching for YouTube videos/channels/playlists" : "Lülita Youtube'i videote, kanalite ja esitusloendite otsing sisse",
     "Warning, everything you type in the search bar will be sent to YouTube." : "Hoiatus: kõik sinu sisestatu saadetakse Youtube'i teenusesse.",
+    "No video reference found" : "Ühtegi video viidet ei leidu",
     "API Key" : "API võti"
 },
 "nplurals=2; plural=(n != 1);");
