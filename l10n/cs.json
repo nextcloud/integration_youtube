@@ -25,6 +25,7 @@
     "Failed to save YouTube user options" : "Nepodařilo se uložit uživatelské předvolby pro YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Zapnout vyhledávání videí/kanálů/seznamů na YouTube",
     "Warning, everything you type in the search bar will be sent to YouTube." : "Varování – cokoli zadáte do kolonky vyhledávání bude odesláno službě YouTube.",
+    "No video reference found" : "Nenalezeno žádné odkazování na video",
     "API Key" : "Klíč k API"
 },"pluralForm" :"nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;"
 }

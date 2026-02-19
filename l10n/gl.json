@@ -26,6 +26,7 @@
     "Failed to save YouTube user options" : "Produciuse un fallo ao gardar as opcións de usuario de YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Activar a busca de vídeos/canles/listas de reprodución de YouTube",
     "Warning, everything you type in the search bar will be sent to YouTube." : "Advertencia, todo o que escriba na barra de buscas enviarase a YouTube.",
+    "No video reference found" : "Non se atopou ningunha referencia de vídeo",
     "API Key" : "Chave da API"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
