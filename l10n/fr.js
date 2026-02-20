@@ -6,7 +6,6 @@ OC.L10N.register(
     "Bad credentials" : "Identifiants incorrects",
     "Connected accounts" : "Comptes connectés",
     "YouTube Integration" : "Intégration YouTube",
-    "Visit" : "Visiter",
-    "API Key" : "Clé API"
+    "Visit" : "Visiter"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

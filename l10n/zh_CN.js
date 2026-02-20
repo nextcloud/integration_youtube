@@ -25,7 +25,6 @@ OC.L10N.register(
     "YouTube user options saved" : "YouTube用户选项已保存",
     "Failed to save YouTube user options" : "YouTube用户选项保存失败",
     "Enable searching for YouTube videos/channels/playlists" : "启用查找YouTube视频/频道/播放列表",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，你在搜索框输入的所有内容都会发送到YouTube。",
-    "API Key" : "API 密匙"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，你在搜索框输入的所有内容都会发送到YouTube。"
 },
 "nplurals=1; plural=0;");

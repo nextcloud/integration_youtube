@@ -27,7 +27,6 @@ OC.L10N.register(
     "YouTube user options saved" : "YouTube kullanıcı ayarları kaydedildi",
     "Failed to save YouTube user options" : "YouTube kullanıcı ayarları kaydedilemedi",
     "Enable searching for YouTube videos/channels/playlists" : "YouTube video/kanal/oynatma listesi aramayı aç",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Uyarı, arama çubuğuna yazdığınız her şey YouTube üzerine gönderilecek.",
-    "API Key" : "API anahtarı"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Uyarı, arama çubuğuna yazdığınız her şey YouTube üzerine gönderilecek."
 },
 "nplurals=2; plural=(n > 1);");

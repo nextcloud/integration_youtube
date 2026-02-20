@@ -27,7 +27,6 @@ OC.L10N.register(
     "YouTube user options saved" : "Opciones de usuario de YouTube guardadas",
     "Failed to save YouTube user options" : "Error al guardar opciones de usuario de YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Habilitar búsqueda de videos/canales/listas de reproducción de YouTube",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Advertencia, todo lo que escribas en la barra de búsqueda será enviado a YouTube.",
-    "API Key" : "Clave de API"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Advertencia, todo lo que escribas en la barra de búsqueda será enviado a YouTube."
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

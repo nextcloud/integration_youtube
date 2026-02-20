@@ -28,7 +28,6 @@ OC.L10N.register(
     "Failed to save YouTube user options" : "YouTube-Benutzereinstellungen konnten nicht gespeichert werden",
     "Enable searching for YouTube videos/channels/playlists" : "Suche nach YouTube-Videos/Kanälen/Playlists aktivieren",
     "Warning, everything you type in the search bar will be sent to YouTube." : "Achtung, alles, was du in die Suchleiste eingibst, wird an YouTube gesendet.",
-    "No video reference found" : "Keine Videoreferenz gefunden",
-    "API Key" : "API-Schlüssel"
+    "No video reference found" : "Keine Videoreferenz gefunden"
 },
 "nplurals=2; plural=(n != 1);");

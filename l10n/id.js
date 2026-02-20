@@ -27,7 +27,6 @@ OC.L10N.register(
     "YouTube user options saved" : "Opsi pengguna YouTube disimpan",
     "Failed to save YouTube user options" : "Gagal menyimpan opsi pengguna YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Aktifkan pencarian video/channel/playlist YouTube",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Peringatan, semua yang Anda ketik di bilah pencarian akan dikirim ke YouTube.",
-    "API Key" : "Kunci API"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Peringatan, semua yang Anda ketik di bilah pencarian akan dikirim ke YouTube."
 },
 "nplurals=1; plural=0;");

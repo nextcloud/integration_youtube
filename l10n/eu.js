@@ -5,7 +5,6 @@ OC.L10N.register(
     "Bad HTTP method" : "HTTP metodo okerra",
     "Bad credentials" : "Kredentzial okerrak",
     "Connected accounts" : "Konektatutako kontuak",
-    "Visit" : "Bisitatu",
-    "API Key" : "API gakoa"
+    "Visit" : "Bisitatu"
 },
 "nplurals=2; plural=(n != 1);");

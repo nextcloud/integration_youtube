@@ -3,7 +3,6 @@
     "Bad HTTP method" : "Njia mbaya ya HTTP ",
     "Bad credentials" : "Sifa mbaya",
     "Connected accounts" : "Akaunti zilizounganishwa",
-    "Visit" : "Tembelea",
-    "API Key" : "Ufunguo wa API"
+    "Visit" : "Tembelea"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

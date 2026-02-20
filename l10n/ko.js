@@ -11,7 +11,6 @@ OC.L10N.register(
     "YouTube API Key" : "YouTube API 키",
     "YouTube user options saved" : "YouTube 사용자 옵션 저장됨",
     "Failed to save YouTube user options" : "YouTube 사용자 옵션을 저장하는데 실패했습니다",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "주의, 검색 바에 입력한 모든 것이 YouTube로 보내집니다.",
-    "API Key" : "API 키"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "주의, 검색 바에 입력한 모든 것이 YouTube로 보내집니다."
 },
 "nplurals=1; plural=0;");

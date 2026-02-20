@@ -28,6 +28,6 @@ OC.L10N.register(
     "Failed to save YouTube user options" : "Falha ao salvar as opções de usuário do YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Ativar a pesquisa de vídeos/canais/playlists do YouTube",
     "Warning, everything you type in the search bar will be sent to YouTube." : "Atenção, tudo o que você digitar na barra de pesquisa será enviado ao YouTube.",
-    "API Key" : "Chave API"
+    "No video reference found" : "Nenhuma referência de vídeo encontrada"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
