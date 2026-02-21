@@ -27,6 +27,7 @@ OC.L10N.register(
     "YouTube user options saved" : "YouTube user options saved",
     "Failed to save YouTube user options" : "Failed to save YouTube user options",
     "Enable searching for YouTube videos/channels/playlists" : "Enable searching for YouTube videos/channels/playlists",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "Warning, everything you type in the search bar will be sent to YouTube."
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Warning, everything you type in the search bar will be sent to YouTube.",
+    "No video reference found" : "No video reference found"
 },
 "nplurals=2; plural=(n != 1);");

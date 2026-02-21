@@ -27,6 +27,7 @@ OC.L10N.register(
     "YouTube user options saved" : "已保存 YouTube 用戶選項",
     "Failed to save YouTube user options" : "無法保存 YouTube 用戶選項",
     "Enable searching for YouTube videos/channels/playlists" : "啟用 YouTube 視像/頻道/音樂播放表搜尋",
-    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube。"
+    "Warning, everything you type in the search bar will be sent to YouTube." : "警告，您在搜尋列中輸入的所有東西都會傳送到 YouTube。",
+    "No video reference found" : "未找到視像參考"
 },
 "nplurals=1; plural=0;");
