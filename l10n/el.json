@@ -1,4 +1,5 @@
 { "translations": {
+    "No description" : "Χωρίς περιγραφή",
     "Bad HTTP method" : "Κακή μέθοδος HTTP",
     "Bad credentials" : "Εσφαλμένα διαπιστευτήρια",
     "Connected accounts" : "Συνδεδεμένοι λογαριασμοί",
