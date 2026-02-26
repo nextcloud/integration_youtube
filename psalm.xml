@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <psalm
+	ensureOverrideAttribute="false"
 	errorBaseline="psalm-baseline.xml"
 	errorLevel="4"
 	findUnusedBaselineEntry="true"
