@@ -1,8 +1,31 @@
 { "translations": {
+    "Could not encrypt the YouTube API key" : "No se pudo cifrar la clave API de YouTube",
+    "Could not save the user config" : "No se pudo guardar la configuración de usuario",
+    "YouTube Link" : "Enlace a YouTube",
+    "YouTube Channels" : "Canales de Youtube",
+    "YouTube Playlists" : "Listas de reproducción de YouTube",
+    "YouTube Videos" : "Vídeos de Youtube",
     "No description" : "Sin descripción",
+    "YouTube API error" : "Error de la API de Youtube",
+    "YouTube API Key not set" : "Clave API de YouTube no establecida",
+    "Could not decrypt the YouTube API key" : "No se pudo descifrar la clave API de YouTube",
     "Bad HTTP method" : "Método HTTP erróneo",
     "Bad credentials" : "Credenciales erróneas",
     "Connected accounts" : "Cuentas conectadas",
-    "Visit" : "Visitar"
+    "YouTube Integration" : "Integración de YouTube",
+    "YouTube Integration providing inline video player for link previews" : "Integración de YouTube que proporciona un reproductor minimizado para previsualizar enlaces",
+    "YouTube integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> YouTube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "Integración de YouTube que proporciona un reproductor minimizado para previsualizar enlaces, un selector inteligente y un proveedor de búsqueda para buscar vídeos de YouTube, canales y listas de reproducción.\n\nConfiguración:\nAñade tu clave API de YouTube en Configuraciones de Administración -> Aplicaciones conectadas -> Integración de Youtube para activar la búsqueda y el selector inteligente.\n\nNota: la búsqueda y el selector inteligente están desactivados por defecto. Los usuarios pueden activar la funcionalidad en su respectiva configuración.",
+    "YouTube admin options saved" : "Opciones de administración de YouTube guardadas",
+    "Failed to save YouTube admin options" : "Error al guardar opciones de administración de YouTube",
+    "Enter a YouTube Data API Key below to use the smart picker and the search." : "Añade una clave API de YouTube Data para utilizar el selector inteligente y ls búsqueda.",
+    "Visit" : "Visitar",
+    "Search and enable \"YouTube Data API v3\"" : "Busca y activa \"YouTube Data API v3\"",
+    "Create credentials for Public Data usage" : "Crea credenciales para uso de datos públicos",
+    "YouTube API Key" : "Clave API de YouTube",
+    "YouTube user options saved" : "Configuración de usuario de YouTube guardada",
+    "Failed to save YouTube user options" : "Error al guardar configuración de usuario de YouTube",
+    "Enable searching for YouTube videos/channels/playlists" : "Activar búsqueda por vídeos/canales/listas de reproducción de YouTube",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Advertencia, todo lo que escribas en la barra de búsqueda será enviado a YouTube.",
+    "No video reference found" : "Referencia de vídeo no encontrada"
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
