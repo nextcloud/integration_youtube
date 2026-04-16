@@ -1,5 +1,5 @@
 <!--
-  - SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 # Change Log
@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## 0.7.0 - 2026-04-16
+
+### Added
+- moderize personal and admin settings ([#54](https://github.com/nextcloud/integration_youtube/pull/54)) @kyteinsky
+
+### Changed
+- Adapted spelling of "API" ([#52](https://github.com/nextcloud/integration_youtube/pull/52)) @rakekniven
+- maintenance updates ([#55](https://github.com/nextcloud/integration_youtube/pull/55)) @kyteinsky
+- bump max supported NC version to 34
+
 
 ## 0.6.1 - 2025-11-17
 
