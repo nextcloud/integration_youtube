@@ -1,0 +1,253 @@
+repository_link: https://github.com/nextcloud/integration_youtube
+title: Change Log
+description: All notable changes to this project will be documented in this file.
+markdown_preamble: |-
+  <!--
+    - SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+    - SPDX-License-Identifier: AGPL-3.0-or-later
+  -->
+  # Change Log
+  All notable changes to this project will be documented in this file.
+
+  The format is based on [Keep a Changelog](http://keepachangelog.com/)
+  and this project adheres to [Semantic Versioning](http://semver.org/).
+release_agent:
+  ignore_commits:
+  - author: "^pre-commit-ci\\[bot\\]$"
+  - author: "^Nextcloud-bot$"
+  - email: bot@nextcloud.com
+  - author: "^dependabot\\[bot\\]$"
+  - message: "^chore\\(changelog\\):"
+entries:
+- version: 0.6.1
+  release_date: '2025-11-17'
+  sections:
+  - name: Fixed
+    items:
+    - text: fix referrer policy in youtube iframe for error 153
+      authors:
+      - kyteinsky
+      issue_number: 44
+- version: 0.6.0
+  release_date: '2025-11-17'
+  sections:
+  - name: Added
+    items:
+    - text: i18n translation strings
+      authors: []
+      issue_number:
+  - name: Changed
+    items:
+    - text: Standardize 'YouTube' spelling
+      authors:
+      - rakekniven
+      issue_number: 40
+- version: 0.5.0
+  release_date: '2025-10-06'
+  sections:
+  - name: Added
+    items:
+    - text: migrate to vue3 + lint fixes
+      authors:
+      - kyteinsky
+      issue_number: 32
+    - text: lighter non-interactive reference widget by default
+      authors:
+      - kyteinsky
+      issue_number: 35
+  - name: Changed
+    items:
+    - text: set min NC to 32
+      authors:
+      - kyteinsky
+      issue_number: 33
+    - text: use IExternalProvider, php updates, drop reimpl of reference population
+      authors:
+      - kyteinsky
+      issue_number: 33
+    - text: get-set app config values lazily
+      authors:
+      - kyteinsky
+      issue_number: 34
+  - name: Fixed
+    items:
+    - text: 'fix(readme): screenshot order'
+      authors:
+      - hamza221
+      issue_number: 36
+- version: 0.4.0
+  release_date: '2025-07-28'
+  sections:
+  - name: Changed
+    items:
+    - text: Bump max Nextcloud version to 28
+      authors:
+      - julien-nc
+      issue_number:
+    - text: Use Psalm 6
+      authors:
+      - julien-nc
+      issue_number:
+    - text: Update composer dependencies
+      authors:
+      - julien-nc
+      issue_number:
+  - name: Fixed
+    items:
+    - text: Style issues in admin and personal settings, wrong title alignment
+      authors:
+      - julien-nc
+      issue_number:
+    - text: Fix link to google console
+      authors:
+      - julien-nc
+      issue_number:
+- version: 0.3.1
+  release_date: '2024-11-07'
+  sections:
+  - name: Changed
+    items:
+    - text: update npm+composer deps
+      authors:
+      - kyteinsky
+      issue_number:
+    - text: consistent margin in personal and admin settings
+      authors:
+      - kyteinsky
+      issue_number:
+    - text: bump max NC version to 31 and drop support for 26
+      authors:
+      - kyteinsky
+      issue_number:
+    - text: password confirmation + do not send back decrypted api keys to frontend
+      authors:
+      - kyteinsky
+      issue_number:
+- version: 0.3.0
+  release_date: '2024-07-26'
+  sections:
+  - name: Changed
+    items:
+    - text: update composer deps
+      authors:
+      - kyteinsky
+      issue_number:
+    - text: update gh workflows
+      authors:
+      - kyteinsky
+      issue_number:
+    - text: bump max NC version to 30
+      authors:
+      - kyteinsky
+      issue_number:
+- version: 0.2.1
+  release_date: '2024-03-14'
+  sections:
+  - name: Fixed
+    items:
+    - text: Fix screenshot URLs in info.xml
+      authors: []
+      issue_number:
+- version: 0.2.0
+  release_date: '2024-03-13'
+  sections:
+  - name: Added
+    items:
+    - text: Create appstore-build-publish.yml
+      authors: []
+      issue_number:
+    - text: Add transfix config
+      authors: []
+      issue_number:
+    - text: Add gh workflows
+      authors: []
+      issue_number:
+    - text: Nextcloud 29 compatibility
+      authors: []
+      issue_number:
+    - text: Add search provider and smart picker functionality
+      authors: []
+      issue_number:
+    - text: Add some screenshots
+      authors: []
+      issue_number:
+  - name: Changed
+    items:
+    - text: Update workflows from templates
+      authors: []
+      issue_number:
+    - text: Drop Nextcloud 25 compatibility
+      authors: []
+      issue_number:
+    - text: Update node and composer deps
+      authors: []
+      issue_number:
+    - text: Checks adjusted to also check for php 7.4 on NC 26/27
+      authors: []
+      issue_number:
+  - name: Fixed
+    items:
+    - text: Stop using OC namespace for LinkReferenceProvider
+      authors: []
+      issue_number:
+- version: 0.1.5
+  release_date: '2023-11-16'
+  sections:
+  - name: Added
+    items:
+    - text: Nextcloud 28 compatibility
+      authors: []
+      issue_number:
+    - text: Update links to directly point to the Nextcloud repo
+      authors:
+      - SuperSandro2000
+      issue_number:
+    - text: Privacy friendly embed
+      authors:
+      - kyteinsky
+      issue_number:
+- version: 0.1.4
+  release_date: '2023-05-15'
+  sections:
+  - name: Added
+    items:
+    - text: Nextcloud 27 compatibility
+      authors: []
+      issue_number:
+- version: 0.1.3
+  release_date: '2023-02-17'
+  sections:
+  - name: Added
+    items:
+    - text: Nextcloud 26 compatibility
+      authors: []
+      issue_number:
+  - name: Fixed
+    items:
+    - text: Fix regression when matching links
+      authors: []
+      issue_number:
+- version: 0.1.2
+  release_date: '2023-02-10'
+  sections:
+  - name: Fixed
+    items:
+    - text: Make sure to consider any youtube like a reference
+      authors: []
+      issue_number:
+- version: 0.1.1
+  release_date: '2022-11-07'
+  sections:
+  - name: Changed
+    items:
+    - text: Update dependencies
+      authors: []
+      issue_number:
+- version: 0.1.0
+  release_date: '2022-09-20'
+  sections:
+  - name: Added
+    items:
+    - text: Initial release for Nextcloud 25
+      authors: []
+      issue_number:
