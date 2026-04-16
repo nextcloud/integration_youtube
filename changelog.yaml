@@ -19,6 +19,28 @@ release_agent:
   - author: "^dependabot\\[bot\\]$"
   - message: "^chore\\(changelog\\):"
 entries:
+- version: 0.7.0
+  release_date: '2026-04-16'
+  sections:
+  - name: Added
+    items:
+    - text: moderize personal and admin settings
+      authors:
+      - kyteinsky
+      issue_number: 54
+  - name: Changed
+    items:
+    - text: Adapted spelling of "API"
+      authors:
+      - rakekniven
+      issue_number: 52
+    - text: maintenance updates
+      authors:
+      - kyteinsky
+      issue_number: 55
+    - text: bump max supported NC version to 34
+      authors: []
+      issue_number:
 - version: 0.6.1
   release_date: '2025-11-17'
   sections:
