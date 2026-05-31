@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "No description" : "Nėra aprašymo",
     "Bad HTTP method" : "Blogas HTTP metodas",
     "Bad credentials" : "Blogi prisijungimo duomenys",
     "Connected accounts" : "Prijungtos paskyros",
