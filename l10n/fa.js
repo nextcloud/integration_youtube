@@ -4,6 +4,7 @@ OC.L10N.register(
     "No description" : "No description",
     "Bad HTTP method" : "روش HTTP بد",
     "Bad credentials" : "اعتبارنامه بد",
-    "Connected accounts" : "حساب‌های متصل"
+    "Connected accounts" : "حساب‌های متصل",
+    "No video reference found" : "هیچ ارجاع ویدیویی پیدا نشد"
 },
 "nplurals=2; plural=(n > 1);");
