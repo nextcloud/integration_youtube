@@ -1,8 +1,31 @@
 { "translations": {
-    "No description" : "No description",
+    "Could not encrypt the YouTube API key" : "رمزگذاری کلید API یوتیوب ممکن نشد",
+    "Could not save the user config" : "ذخیره پیکربندی کاربر ممکن نشد",
+    "YouTube Link" : "پیوند یوتیوب",
+    "YouTube Channels" : "کانال‌های یوتیوب",
+    "YouTube Playlists" : "فهرست‌های پخش یوتیوب",
+    "YouTube Videos" : "ویدیوهای یوتیوب",
+    "No description" : "بدون توضیح",
+    "YouTube API error" : "خطای API یوتیوب",
+    "YouTube API Key not set" : "کلید API یوتیوب تنظیم نشده است",
+    "Could not decrypt the YouTube API key" : "رمزگشایی کلید API یوتیوب ممکن نشد",
     "Bad HTTP method" : "روش HTTP بد",
     "Bad credentials" : "اعتبارنامه بد",
     "Connected accounts" : "حساب‌های متصل",
-    "No video reference found" : "هیچ ارجاع ویدیویی پیدا نشد"
+    "YouTube Integration" : "یکپارچه‌سازی یوتیوب",
+    "YouTube Integration providing inline video player for link previews" : "یکپارچه‌سازی یوتیوب با پخش‌کننده ویدیوی درون‌خطی برای پیش‌نمایش پیوندها",
+    "YouTube integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> YouTube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "یکپارچه‌سازی یوتیوب که یک پخش‌کننده ویدیوی درون‌خطی برای پیش‌نمایش پیوندها، یک انتخابگر هوشمند و یک ارائه‌دهنده جستجو برای جستجوی ویدیوها، کانال‌ها و فهرست‌های پخش یوتیوب فراهم می‌کند.\n\nپیکربندی:\n\nبرای فعال کردن جستجو و انتخابگر هوشمند، یک کلید API را در بخش تنظیمات مدیریت -> حساب‌های متصل -> یکپارچه‌سازی یوتیوب تنظیم کنید\n\nتوجه: قابلیت جستجو و انتخابگر هوشمند به‌صورت پیش‌فرض غیرفعال است. کاربران می‌توانند از تنظیمات مربوط به خودشان آن‌ها را فعال کنند.",
+    "YouTube admin options saved" : "گزینه‌های مدیریتی یوتیوب ذخیره شد",
+    "Failed to save YouTube admin options" : "ذخیره گزینه‌های مدیریتی یوتیوب ناموفق بود",
+    "Enter a YouTube Data API Key below to use the smart picker and the search." : "برای استفاده از انتخابگر هوشمند و جستجو، یک کلید YouTube Data API را در زیر وارد کنید.",
+    "Visit" : "مراجعه کنید به",
+    "Search and enable \"YouTube Data API v3\"" : "\"YouTube Data API v3\" را جستجو و فعال کنید",
+    "Create credentials for Public Data usage" : "ایجاد اعتبارنامه برای استفاده از داده‌های عمومی",
+    "YouTube API Key" : "کلید API YouTube",
+    "YouTube user options saved" : "گزینه‌های کاربری YouTube ذخیره شد",
+    "Failed to save YouTube user options" : "ذخیره گزینه‌های کاربری YouTube ناموفق بود",
+    "Enable searching for YouTube videos/channels/playlists" : "فعال کردن جستجوی ویدیوها/کانال‌ها/فهرست‌های پخش YouTube",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "هشدار، هر چیزی که در نوار جستجو تایپ کنید به YouTube ارسال می‌شود.",
+    "No video reference found" : "هیچ ارجاع ویدیویی یافت نشد"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }
