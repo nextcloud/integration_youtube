@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_youtube",
     {
+    "YouTube Playlists" : "Playlists do YouTube",
     "Bad HTTP method" : "Método HTTP incorreto",
     "Bad credentials" : "Credenciais inválidas",
     "Connected accounts" : "Contas conectadas"
