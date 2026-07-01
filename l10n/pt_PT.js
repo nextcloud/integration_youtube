@@ -4,6 +4,7 @@ OC.L10N.register(
     "Could not encrypt the YouTube API key" : "Não foi possível criptografar a chave API do YouTube",
     "YouTube Channels" : "Canais do YouTube",
     "YouTube Playlists" : "Playlists do YouTube",
+    "YouTube Videos" : "Vídeos do YouTube",
     "No description" : "Sem descrição",
     "YouTube API error" : "Erro na API do YouTube",
     "Bad HTTP method" : "Método HTTP incorreto",
@@ -11,8 +12,10 @@ OC.L10N.register(
     "Connected accounts" : "Contas conectadas",
     "YouTube Integration providing inline video player for link previews" : "Integração com o YouTube, fornecendo um reprodutor de vídeo embutido para visualizações de links",
     "Failed to save YouTube admin options" : "Falha ao salvar as opções administrativas do YouTube",
+    "Visit" : "Visitar",
     "Search and enable \"YouTube Data API v3\"" : "Procure e ative \"YouTube Data API v3\"",
     "YouTube user options saved" : "Opções de usuário do YouTube salvas",
+    "Failed to save YouTube user options" : "Falha ao salvar as opções de usuário do YouTube",
     "No video reference found" : "Nenhuma referência de vídeo encontrada"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
