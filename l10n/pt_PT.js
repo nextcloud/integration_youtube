@@ -7,6 +7,7 @@ OC.L10N.register(
     "YouTube Videos" : "Vídeos do YouTube",
     "No description" : "Sem descrição",
     "YouTube API error" : "Erro na API do YouTube",
+    "YouTube API Key not set" : "Chave API do YouTube não definida",
     "Bad HTTP method" : "Método HTTP incorreto",
     "Bad credentials" : "Credenciais inválidas",
     "Connected accounts" : "Contas conectadas",
@@ -14,8 +15,10 @@ OC.L10N.register(
     "Failed to save YouTube admin options" : "Falha ao salvar as opções administrativas do YouTube",
     "Visit" : "Visitar",
     "Search and enable \"YouTube Data API v3\"" : "Procure e ative \"YouTube Data API v3\"",
+    "Create credentials for Public Data usage" : "Crie credenciais para uso de Dados Públicos",
     "YouTube user options saved" : "Opções de usuário do YouTube salvas",
     "Failed to save YouTube user options" : "Falha ao salvar as opções de usuário do YouTube",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Atenção, tudo o que você digitar na barra de pesquisa será enviado ao YouTube.",
     "No video reference found" : "Nenhuma referência de vídeo encontrada"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
