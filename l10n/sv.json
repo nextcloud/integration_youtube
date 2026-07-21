@@ -1,8 +1,31 @@
 { "translations": {
+    "Could not encrypt the YouTube API key" : "Det gick inte att kryptera YouTubes API-nyckel",
+    "Could not save the user config" : "Det gick inte att spara användarkonfigurationen",
+    "YouTube Link" : "YouTube-länk",
+    "YouTube Channels" : "YouTube-kanaler",
+    "YouTube Playlists" : "YouTube-spellistor",
+    "YouTube Videos" : "YouTube-videor",
     "No description" : "Ingen beskrivning",
+    "YouTube API error" : "Fel i YouTube-API:t",
+    "YouTube API Key not set" : "YouTubes API-nyckel har inte angetts",
+    "Could not decrypt the YouTube API key" : "Det gick inte att dekryptera YouTubes API-nyckel",
     "Bad HTTP method" : "Felaktig HTTP-metod",
     "Bad credentials" : "Ogiltiga inloggningsuppgifter",
     "Connected accounts" : "Anslutna konton",
-    "Visit" : "Besök"
+    "YouTube Integration" : "YouTube-integrering",
+    "YouTube Integration providing inline video player for link previews" : "YouTube-integrering med inbäddad videospelare för länkförhandsvisningar",
+    "YouTube integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> YouTube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "YouTube-integrering som tillhandahåller en inbäddad videospelare för länkförhandsvisningar, en smartväljare och en sökleverantör för att söka efter YouTube-videor, kanaler och spellistor.\n\nKonfiguration:\n\nAnge en API-nyckel under Administrationsinställningar → Anslutna konton → YouTube-integrering för att aktivera sökning och smartväljaren.\n\nObs! Sökningen och smartväljaren är inaktiverade som standard. Användarna kan själva aktivera dem i respektive inställning.",
+    "YouTube admin options saved" : "Administratörsalternativen för YouTube har sparats",
+    "Failed to save YouTube admin options" : "Det gick inte att spara administratörsalternativen för YouTube",
+    "Enter a YouTube Data API Key below to use the smart picker and the search." : "Ange en API-nyckel för YouTube Data nedan för att använda smartväljaren och sökningen.",
+    "Visit" : "Besök",
+    "Search and enable \"YouTube Data API v3\"" : "Sök efter och aktivera \"YouTube Data API v3\"",
+    "Create credentials for Public Data usage" : "Skapa inloggningsuppgifter för användning av offentliga data",
+    "YouTube API Key" : "YouTube-API-nyckel",
+    "YouTube user options saved" : "Användaralternativen för YouTube har sparats",
+    "Failed to save YouTube user options" : "Det gick inte att spara användaralternativen för YouTube",
+    "Enable searching for YouTube videos/channels/playlists" : "Aktivera sökning efter YouTube-videor, kanaler och spellistor",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Varning! Allt du skriver i sökfältet skickas till YouTube.",
+    "No video reference found" : "Ingen videoreferens hittades"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
