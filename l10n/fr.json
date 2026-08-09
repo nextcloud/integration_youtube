@@ -1,9 +1,31 @@
 { "translations": {
+    "Could not encrypt the YouTube API key" : "Impossible de chiffrer la clé d'API YouTube",
+    "Could not save the user config" : "Impossible d'enregistrer la configuration utilisateur",
+    "YouTube Link" : "Lien YouTube",
+    "YouTube Channels" : "Chaînes YouTube",
+    "YouTube Playlists" : "Listes de lecture YouTube",
+    "YouTube Videos" : "Vidéos YouTube",
     "No description" : "Pas de description",
+    "YouTube API error" : "Erreur de l'API YouTube",
+    "YouTube API Key not set" : "Clé d'API YouTube non définie",
+    "Could not decrypt the YouTube API key" : "Impossible de déchiffrer la clé d'API YouTube",
     "Bad HTTP method" : "Mauvaise méthode HTTP",
     "Bad credentials" : "Identifiants incorrects",
     "Connected accounts" : "Comptes connectés",
     "YouTube Integration" : "Intégration YouTube",
-    "Visit" : "Visiter"
+    "YouTube Integration providing inline video player for link previews" : "Intégration YouTube fournissant un lecteur vidéo intégré pour les aperçus de liens",
+    "YouTube integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.\n\nConfiguration:\n\nSet an API key in the Administration settings -> Connected Accounts -> YouTube Integration section to allow the search and smart picker\n\nNote: The search and smart picker functionality is disabled by default. Users can opt-in to enable them from their respective settings." : "Intégration YouTube fournissant un lecteur vidéo intégré pour les aperçus de liens, un sélecteur intelligent et un fournisseur de recherche pour trouver des vidéos, chaînes et listes de lecture YouTube.\n\nConfiguration :\n\nDéfinissez une clé d'API dans les Paramètres d'administration -> Comptes connectés -> section Intégration YouTube pour autoriser la recherche et le sélecteur intelligent\n\nRemarque : La fonctionnalité de recherche et de sélecteur intelligent est désactivée par défaut. Les utilisateurs peuvent la réactiver à partir des paramètres correspondants.",
+    "YouTube admin options saved" : "Options d'administration YouTube enregistrées",
+    "Failed to save YouTube admin options" : "Échec de l'enregistrement des options d'administration YouTube",
+    "Enter a YouTube Data API Key below to use the smart picker and the search." : "Entrez une clé d'API de données YouTube ci-dessous pour utiliser la recherche et le sélecteur intelligent.",
+    "Visit" : "Visiter",
+    "Search and enable \"YouTube Data API v3\"" : "Recherchez et activez « YouTube Data API v3 »",
+    "Create credentials for Public Data usage" : "Créer des identifiants pour l'utilisation des données publiques",
+    "YouTube API Key" : "Clé d'API YouTube",
+    "YouTube user options saved" : "Options utilisateur YouTube enregistrées",
+    "Failed to save YouTube user options" : "Échec de l'enregistrement des options utilisateur YouTube",
+    "Enable searching for YouTube videos/channels/playlists" : "Activer la recherche des vidéos/chaînes/listes de lecture YouTube",
+    "Warning, everything you type in the search bar will be sent to YouTube." : "Attention, tout ce que vous tapez dans la barre de recherche sera envoyé à YouTube.",
+    "No video reference found" : "Aucune référence de vidéo trouvée"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
