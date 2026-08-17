@@ -19,7 +19,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { registerWidget } from '@nextcloud/vue/components/NcRichText'
+import { registerWidget } from '@nextcloud/vue/functions/registerReference'
 
 registerWidget('integration_youtube', async (el, { richObject, accessible, interactive }) => {
 	const { createApp } = await import('vue')
