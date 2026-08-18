@@ -19,6 +19,33 @@ release_agent:
   - author: "^dependabot\\[bot\\]$"
   - message: "^chore\\(changelog\\):"
 entries:
+- version: 0.7.1
+  release_date: '2026-08-19'
+  sections:
+  - name: Changed
+    items:
+    - text: add NC 35 support
+      authors:
+      - kyteinsky
+      issue_number: 59
+    - text: remove non-existent branches from the matrix
+      authors:
+      - kyteinsky
+      issue_number: 61
+    - text: import from @nextcloud/vue/functions/registerReference
+      authors:
+      - kyteinsky
+      issue_number: 63
+    - text: composer and npm update
+      authors:
+      - kyteinsky
+      issue_number: 64
+  - name: Fixed
+    items:
+    - text: "[main] Fix npm audit"
+      authors:
+      - nextcloud-command
+      issue_number: 58
 - version: 0.7.0
   release_date: '2026-04-16'
   sections:
