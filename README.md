@@ -18,3 +18,7 @@ Unified Search
 
 Reference Provider
 ![Reference Provider](img/screenshot3.png)
+
+## Note
+
+YouTube embed feature does not work if the "Referrer" header is stripped by the browser adblockers.
