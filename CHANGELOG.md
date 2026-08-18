@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.7.1 - 2026-08-19
+
+### Changed
+- add NC 35 support ([#59](https://github.com/nextcloud/integration_youtube/pull/59)) @kyteinsky
+- remove non-existent branches from the matrix ([#61](https://github.com/nextcloud/integration_youtube/pull/61)) @kyteinsky
+- import from @nextcloud/vue/functions/registerReference ([#63](https://github.com/nextcloud/integration_youtube/pull/63)) @kyteinsky
+- composer and npm update ([#64](https://github.com/nextcloud/integration_youtube/pull/64)) @kyteinsky
+
+### Fixed
+- [main] Fix npm audit ([#58](https://github.com/nextcloud/integration_youtube/pull/58)) @nextcloud-command
+
+
 ## 0.7.0 - 2026-04-16
 
 ### Added
