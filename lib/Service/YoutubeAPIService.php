@@ -133,7 +133,7 @@ class YoutubeAPIService {
 		string $method = 'GET',
 		bool $jsonResponse = true,
 	) {
-		$token = $this->appConfig->getAppValueString(Application::APP_ID, 'token', lazy: true);
+		$token = $this->appConfig->getAppValueString('token', lazy: true);
 
 		try {
 			if ($token === '') {
