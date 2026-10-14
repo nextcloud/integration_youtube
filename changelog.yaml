@@ -19,6 +19,19 @@ release_agent:
   - author: "^dependabot\\[bot\\]$"
   - message: "^chore\\(changelog\\):"
 entries:
+- version: 0.7.2
+  release_date: '2026-10-14'
+  sections:
+  - name: Fixed
+    items:
+    - text: use the real key to get the config value
+      authors:
+      - kyteinsky
+      issue_number: 68
+    - text: "[main] Fix npm audit"
+      authors:
+      - nextcloud-command
+      issue_number: 66
 - version: 0.7.1
   release_date: '2026-08-19'
   sections:

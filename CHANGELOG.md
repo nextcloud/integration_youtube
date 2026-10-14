@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.7.2 - 2026-10-14
+
+### Fixed
+- use the real key to get the config value ([#68](https://github.com/nextcloud/integration_youtube/pull/68)) @kyteinsky
+- [main] Fix npm audit ([#66](https://github.com/nextcloud/integration_youtube/pull/66)) @nextcloud-command
+
+
 ## 0.7.1 - 2026-08-19
 
 ### Changed
