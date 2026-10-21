@@ -1,4 +1,8 @@
 <!--
+SPDX-FileCopyrightText: 2018 Rob Cresswell
+SPDX-FileCopyrightText: Google LLC
+SPDX-License-Identifier: MIT AND Apache-2.0
+
 MIT License
 
 Copyright (c) 2018 Rob Cresswell
