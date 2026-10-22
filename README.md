@@ -1,3 +1,7 @@
+<!--
+  - SPDX-FileCopyrightText: 2022 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 # YouTube Integration
 
 YouTube Integration providing an inline video player for link previews, a smart picker and search provider for searching YouTube videos, channels, and playlists.

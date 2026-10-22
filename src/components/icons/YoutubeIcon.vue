@@ -1,3 +1,9 @@
+<!--
+  - SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-FileCopyrightText: Icons8 LLC <https://icons8.com>
+  - SPDX-License-Identifier: AGPL-3.0-or-later AND LicenseRef-Icons8
+-->
+
 <template>
 	<span
 		:aria-hidden="!title"
