@@ -8,6 +8,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Removed
+- Nextcloud 32 and PHP 8.1 support ([#77](https://github.com/nextcloud/integration_youtube/pull/77)) @oleksandr-nc
+
 ## 0.7.2 - 2026-10-14
 
 ### Fixed
