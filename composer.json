@@ -1,6 +1,5 @@
 {
 	"require-dev": {
-		"roave/security-advisories": "dev-master",
 		"nextcloud/ocp": "dev-stable33",
 		"nextcloud/coding-standard": "^1.1",
 		"friendsofphp/php-cs-fixer": "^3.38",
