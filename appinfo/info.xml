@@ -27,7 +27,7 @@ Note: The search and smart picker functionality is disabled by default. Users ca
 	<screenshot>https://raw.githubusercontent.com/nextcloud/integration_youtube/main/img/screenshot3.png</screenshot>
 	<dependencies>
 		<php min-version="8.2"/>
-		<nextcloud min-version="33" max-version="35"/>
+		<nextcloud min-version="33" max-version="36"/>
 	</dependencies>
 	<settings>
 		<admin>OCA\IntegrationYoutube\Settings\Admin</admin>
