@@ -4,7 +4,8 @@
 		"nextcloud/coding-standard": "^1.1",
 		"friendsofphp/php-cs-fixer": "^3.38",
 		"guzzlehttp/guzzle": "^7.5.0",
-		"vimeo/psalm": "^6.15.1"
+		"vimeo/psalm": "^6.15.1",
+		"phpunit/phpunit": "^10.5"
 	},
 	"config": {
 		"optimize-autoloader": true,
@@ -25,7 +26,8 @@
 		"psalm:ci": "psalm --threads=1",
 		"psalm:clear": "psalm --clear-cache && psalm --clear-global-cache",
 		"psalm:update-baseline": "psalm --update-baseline",
-		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MismatchingDocblockParamType,MismatchingDocblockReturnType,MissingParamType,InvalidFalsableReturnType"
+		"psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MismatchingDocblockParamType,MismatchingDocblockReturnType,MissingParamType,InvalidFalsableReturnType",
+		"test:unit": "vendor/bin/phpunit -c tests/phpunit.xml --colors=always --fail-on-warning --fail-on-risky"
 	},
 	"require": {
 		"php": "^8.2"
