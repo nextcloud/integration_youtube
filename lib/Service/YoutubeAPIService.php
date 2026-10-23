@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -42,7 +44,7 @@ class YoutubeAPIService {
 	 * @param string $type video|channel|playlist
 	 * @param int $limit
 	 * @param ?string $nextPageToken
-	 * @return array{results: SearchResultItem[], nextPageToken: string}
+	 * @return array{results: SearchResultItem[], nextPageToken: ?string}
 	 * @throws RuntimeException
 	 */
 	public function search(string $query, string $type, int $limit = 25, ?string $nextPageToken = null): array {
@@ -61,7 +63,16 @@ class YoutubeAPIService {
 		$response = $this->request('/search', $params);
 
 		if (isset($response['error'])) {
+			if (!is_string($response['error'])) {
+				// an error that is not text, such as an error object: not one of the errors request() returns
+				$this->logger->warning('YouTube API answered with an error', ['app' => Application::APP_ID, 'response' => json_encode($response['error'])]);
+				throw new RuntimeException($this->l10n->t('YouTube API error'));
+			}
 			throw new RuntimeException($response['error']);
+		}
+		if (!is_array($response) || (array_key_exists('items', $response) && !is_array($response['items']))) {
+			$this->logger->warning('YouTube API answered without a list of results', ['app' => Application::APP_ID]);
+			throw new RuntimeException($this->l10n->t('YouTube API error'));
 		}
 
 		/* example response for type 'video'
@@ -84,21 +95,38 @@ class YoutubeAPIService {
 		} */
 		try {
 			$results = [];
-			foreach ($response['items'] as $item) {
+			foreach ($response['items'] ?? [] as $item) {
+				$id = $item['id'][$type . 'Id'] ?? null;
+				$snippet = $item['snippet'] ?? [];
+				$title = $snippet['title'] ?? null;
+				$thumbnailUrl = $snippet['thumbnails']['default']['url'] ?? null;
+				$channelTitle = $snippet['channelTitle'] ?? null;
+				$publishedAt = $snippet['publishedAt'] ?? null;
+				// left out: a result without an ID of the searched type, such as a channel among videos, which the fields
+				// filter leaves without one, a result without a title, thumbnail, channel title or date, the fields a search
+				// result cannot do without, and a result with a date text that cannot be read; empty text counts as missing
+				if (in_array($id, [null, ''], true) || in_array($title, [null, ''], true) || in_array($thumbnailUrl, [null, ''], true)
+					|| in_array($channelTitle, [null, ''], true) || $publishedAt === null || strtotime($publishedAt) === false) {
+					continue;
+				}
+				$description = $snippet['description'] ?? '';
 				$results[] = new SearchResultItem(
-					$item['id'][$type . 'Id'],
-					$item['snippet']['title'],
-					$item['snippet']['description'] ?: $this->l10n->t('No description'),
-					$item['snippet']['thumbnails']['default']['url'],
-					$item['snippet']['channelTitle'],
-					$item['snippet']['publishedAt'],
+					$id,
+					// the API sends the titles of videos and playlists HTML-escaped, as in "It&#39;s", and channel titles
+					// and all descriptions as they are
+					$type === 'channel' ? $title : html_entity_decode($title, ENT_QUOTES | ENT_HTML5, 'UTF-8'),
+					$description !== '' ? $description : $this->l10n->t('No description'),
+					$thumbnailUrl,
+					$channelTitle,
+					$publishedAt,
 				);
 			}
 			return [
 				'results' => $results,
-				'nextPageToken' => $response['nextPageToken'],
+				// there is none on the last page
+				'nextPageToken' => $response['nextPageToken'] ?? null,
 			];
-		} catch (Exception $e) {
+		} catch (Throwable $e) {
 			$this->logger->warning('YouTube API error', ['exception' => $e, 'app' => Application::APP_ID]);
 			throw new RuntimeException($this->l10n->t('YouTube API error'));
 		}
