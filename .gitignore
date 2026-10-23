@@ -14,3 +14,4 @@ vendor/
 \.idea/
 .php-cs-fixer.cache
 .vscode/
+tests/.phpunit.cache

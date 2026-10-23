@@ -124,7 +124,6 @@ class YoutubeAPIService {
 				return ['error' => $this->l10n->t('YouTube API Key not set')];
 			}
 			$token = $this->crypto->decrypt($token);
-			$params['key'] = $token;
 		} catch (Exception $e) {
 			// logger takes care not to leak the secret
 			$this->logger->error('Failed to decrypt the API key', ['exception' => $e]);
@@ -136,7 +135,11 @@ class YoutubeAPIService {
 			$options = [
 				'headers' => [
 					'Content-Type' => 'application/json; charset=utf-8',
+					// a header rather than a URL parameter, so the error messages that quote the URL do not carry the key
+					'X-Goog-Api-Key' => $token,
 				],
+				// and the header goes to YouTube only, which does not redirect these requests
+				'allow_redirects' => false,
 			];
 
 			if (count($params) > 0) {
@@ -176,17 +179,34 @@ class YoutubeAPIService {
 			if ($respCode >= 400) {
 				return ['error' => $this->l10n->t('Bad credentials')];
 			}
+			if ($respCode >= 300) {
+				// a redirect, which is not followed
+				$this->logger->warning('YouTube API error: HTTP ' . $respCode . ', a redirect that is not followed', ['app' => Application::APP_ID]);
+				return ['error' => $this->l10n->t('YouTube API error')];
+			}
 			if ($jsonResponse) {
 				return json_decode($body, true);
 			}
 			return $body;
 		} catch (ServerException|ClientException $e) {
-			$body = $e->getResponse()->getBody();
-			$this->logger->warning('YouTube API error', ['app' => Application::APP_ID, 'exception' => $e, 'response' => $body]);
+			// not the exception itself: the arguments in its trace hold the request options, and the key with them
+			$response = $e->getResponse();
+			$body = (string)$response->getBody();
+			$this->logger->warning('YouTube API error: HTTP ' . $response->getStatusCode(), ['app' => Application::APP_ID, 'response' => $body]);
 			return ['error' => $e->getMessage()];
 		} catch (Exception|Throwable $e) {
-			$this->logger->warning('YouTube API error', ['exception' => $e, 'app' => Application::APP_ID]);
-			return ['error' => $e->getMessage()];
+			$message = $this->withoutKey($e->getMessage(), $token);
+			$this->logger->warning('YouTube API request failed: ' . get_class($e) . ': ' . $message, ['app' => Application::APP_ID]);
+			return ['error' => $message];
 		}
+	}
+
+	/**
+	 * The text without the API key. The HTTP client quotes a header value it refuses, and a key stored with stray
+	 * whitespace, such as a trailing line break, is one; it trims spaces and tabs first, so look for the bare key.
+	 */
+	private function withoutKey(string $text, string $key): string {
+		$key = trim($key);
+		return $key === '' ? $text : str_replace($key, '***', $text);
 	}
 }

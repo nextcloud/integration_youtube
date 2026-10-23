@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - Nextcloud 32 and PHP 8.1 support ([#77](https://github.com/nextcloud/integration_youtube/pull/77)) @oleksandr-nc
 
+### Fixed
+
+- Keep the YouTube API key out of the log when a request to YouTube fails
+
 ## 0.7.2 - 2026-10-14
 
 ### Fixed
