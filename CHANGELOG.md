@@ -15,7 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added support for Nextcloud 36
 
 ### Removed
-- Nextcloud 32 and PHP 8.1 support ([#77](https://github.com/nextcloud/integration_youtube/pull/77)) @oleksandr-nc
+
+- Nextcloud 32 and PHP 8.1 support
 
 ### Fixed
 
@@ -23,155 +24,188 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.7.2 - 2026-10-14
 
-### Fixed
-- use the real key to get the config value ([#68](https://github.com/nextcloud/integration_youtube/pull/68)) @kyteinsky
-- [main] Fix npm audit ([#66](https://github.com/nextcloud/integration_youtube/pull/66)) @nextcloud-command
+### Changed
 
+- Update dependencies
+
+### Fixed
+
+- Use the real key to get the config value
 
 ## 0.7.1 - 2026-08-19
 
+### Added
+
+- Added support for Nextcloud 35
+
 ### Changed
-- add NC 35 support ([#59](https://github.com/nextcloud/integration_youtube/pull/59)) @kyteinsky
-- remove non-existent branches from the matrix ([#61](https://github.com/nextcloud/integration_youtube/pull/61)) @kyteinsky
-- import from @nextcloud/vue/functions/registerReference ([#63](https://github.com/nextcloud/integration_youtube/pull/63)) @kyteinsky
-- composer and npm update ([#64](https://github.com/nextcloud/integration_youtube/pull/64)) @kyteinsky
 
-### Fixed
-- [main] Fix npm audit ([#58](https://github.com/nextcloud/integration_youtube/pull/58)) @nextcloud-command
-
+- Remove non-existent branches from the npm audit workflow
+- Import from @nextcloud/vue/functions/registerReference
+- Update dependencies
 
 ## 0.7.0 - 2026-04-16
 
 ### Added
-- moderize personal and admin settings ([#54](https://github.com/nextcloud/integration_youtube/pull/54)) @kyteinsky
+
+- Added support for Nextcloud 34
+- Modernize the personal and admin settings
 
 ### Changed
-- Adapted spelling of "API" ([#52](https://github.com/nextcloud/integration_youtube/pull/52)) @rakekniven
-- maintenance updates ([#55](https://github.com/nextcloud/integration_youtube/pull/55)) @kyteinsky
-- bump max supported NC version to 34
 
+- Adapt the spelling of "API"
+- Update the workflows
+- Update dependencies
 
 ## 0.6.1 - 2025-11-17
 
 ### Fixed
-- fix referrer policy in youtube iframe for error 153 ([#44](https://github.com/nextcloud/integration_youtube/pull/44)) @kyteinsky
 
+- Fix the referrer policy in the YouTube iframe for error 153
 
 ## 0.6.0 - 2025-11-17
 
 ### Added
-- i18n translation strings
+
+- Translations
 
 ### Changed
-- Standardize 'YouTube' spelling ([#40](https://github.com/nextcloud/integration_youtube/pull/40)) @rakekniven
 
+- Standardize "YouTube" spelling
 
 ## 0.5.0 - 2025-10-06
 
 ### Added
-- migrate to vue3 + lint fixes ([#32](https://github.com/nextcloud/integration_youtube/pull/32)) @kyteinsky
-- lighter non-interactive reference widget by default ([#35](https://github.com/nextcloud/integration_youtube/pull/35)) @kyteinsky
+
+- Added support for Nextcloud 33
+- Migrate to Vue 3, with lint fixes
+- Lighter non-interactive reference widget by default
 
 ### Changed
-- set min NC to 32 ([#33](https://github.com/nextcloud/integration_youtube/pull/33)) @kyteinsky
-- use IExternalProvider, php updates, drop reimpl of reference population ([#33](https://github.com/nextcloud/integration_youtube/pull/33)) @kyteinsky
-- get-set app config values lazily ([#34](https://github.com/nextcloud/integration_youtube/pull/34)) @kyteinsky
+
+- Use IExternalProvider, update the PHP code, and drop the reimplementation of reference population
+- Get and set app config values lazily
+
+### Removed
+
+- Nextcloud 27 to 31 support
 
 ### Fixed
-- fix(readme): screenshot order ([#36](https://github.com/nextcloud/integration_youtube/pull/36)) @hamza221
 
+- Screenshot order in the README
 
 ## 0.4.0 - 2025-07-28
 
+### Added
+
+- Added support for Nextcloud 32
+
 ### Changed
-- Bump max Nextcloud version to 28 @julien-nc
-- Use Psalm 6 @julien-nc
-- Update composer dependencies @julien-nc
+
+- Use Psalm 6
+- Update dependencies
 
 ### Fixed
-- Style issues in admin and personal settings, wrong title alignment @julien-nc
-- Fix link to google console @julien-nc
 
+- Style issues in the admin and personal settings, wrong title alignment
+- Fix the link to the Google console
 
 ## 0.3.1 - 2024-11-07
 
-### Changed
-- update npm+composer deps @kyteinsky
-- consistent margin in personal and admin settings @kyteinsky
-- bump max NC version to 31 and drop support for 26 @kyteinsky
-- password confirmation + do not send back decrypted api keys to frontend @kyteinsky
+### Added
 
+- Added support for Nextcloud 31
+
+### Changed
+
+- Consistent margin in the personal and admin settings
+- Password confirmation, and no decrypted API keys sent back to the frontend
+- Update dependencies
+
+### Removed
+
+- Nextcloud 26 support
 
 ## 0.3.0 - 2024-07-26
 
-### Changed
-- update composer deps @kyteinsky
-- update gh workflows @kyteinsky
-- bump max NC version to 30 @kyteinsky
+### Added
 
+- Added support for Nextcloud 30
+
+### Changed
+
+- Update the GitHub workflows
+- Update dependencies
 
 ## 0.2.1 - 2024-03-14
 
 ### Fixed
-- Fix screenshot URLs in info.xml
 
+- Fix the screenshot URLs in info.xml
 
 ## 0.2.0 - 2024-03-13
 
 ### Added
+
+- Added support for Nextcloud 29
 - Create appstore-build-publish.yml
-- Add transfix config
-- Add gh workflows
-- Nextcloud 29 compatibility
-- Add search provider and smart picker functionality
+- Add the Transifex config
+- Add GitHub workflows
+- Add the search provider and the smart picker
 - Add some screenshots
 
 ### Changed
-- Update workflows from templates
-- Drop Nextcloud 25 compatibility
-- Update node and composer deps
-- Checks adjusted to also check for php 7.4 on NC 26/27
+
+- Update the workflows from the templates
+- Also check PHP 7.4 on Nextcloud 26 and 27
+- Update dependencies
+
+### Removed
+
+- Nextcloud 25 support
 
 ### Fixed
-- Stop using OC namespace for LinkReferenceProvider
 
+- Stop using the OC namespace for LinkReferenceProvider
 
 ## 0.1.5 - 2023-11-16
 
 ### Added
-- Nextcloud 28 compatibility
-- Update links to directly point to the Nextcloud repo @SuperSandro2000
-- Privacy friendly embed @kyteinsky
 
+- Added support for Nextcloud 28
+- Update the links to point directly to the Nextcloud repository
+- Privacy-friendly embed
 
 ## 0.1.4 - 2023-05-15
 
 ### Added
-- Nextcloud 27 compatibility
 
+- Added support for Nextcloud 27
 
 ## 0.1.3 - 2023-02-17
 
 ### Added
-- Nextcloud 26 compatibility
+
+- Added support for Nextcloud 26
 
 ### Fixed
-- Fix regression when matching links
 
+- Fix a regression when matching links
 
 ## 0.1.2 - 2023-02-10
 
 ### Fixed
-- Make sure to consider any youtube like a reference
 
+- Consider any YouTube link a reference
 
 ## 0.1.1 - 2022-11-07
 
 ### Changed
-- Update dependencies
 
+- Update dependencies
 
 ## 0.1.0 - 2022-09-20
 
 ### Added
+
 - Initial release for Nextcloud 25
