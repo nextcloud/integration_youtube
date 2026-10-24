@@ -3,7 +3,7 @@
 		"nextcloud/ocp": "dev-stable33",
 		"nextcloud/coding-standard": "^1.1",
 		"friendsofphp/php-cs-fixer": "^3.38",
-		"guzzlehttp/guzzle": "^7.5.0",
+		"guzzlehttp/guzzle": "^8.3.0",
 		"vimeo/psalm": "^6.15.1",
 		"phpunit/phpunit": "^10.5"
 	},
