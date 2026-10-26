@@ -24,6 +24,7 @@ use OCP\Search\ISearchQuery;
 use OCP\Search\SearchResult;
 use OCP\Search\SearchResultEntry;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 
 abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 
@@ -70,7 +71,12 @@ abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 		$limit = $query->getLimit();
 		$term = $query->getTerm();
 
-		$searchResult = $this->service->search($term, $type, $limit);
+		try {
+			$searchResult = $this->service->search($term, $type, $limit);
+		} catch (RuntimeException $e) {
+			// no results instead of a server error
+			return SearchResult::complete($this->getName(), []);
+		}
 
 		$formattedResults = array_map(function (SearchResultItem $entry): SearchResultEntry {
 			return new SearchResultEntry(
@@ -88,23 +94,33 @@ abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 	}
 
 	private function paginatedSearch(string $type, IUser $user, ISearchQuery $query): SearchResult {
-		$userId = $user->getUID();
 		$limit = $query->getLimit();
 		$term = $query->getTerm();
-		$offset = $query->getCursor();
+		$offset = intval($query->getCursor());
+		// per search type too, so that the video, channel and playlist searches for a term each keep their own page
+		$cacheKey = $user->getUID() . '/' . $type . '/' . $term;
 
-		$nextPageToken = $this->cache->get($userId . $term);
+		// a new search starts at the first page, and "load more" goes on from where the page before it ended
+		$nextPageToken = $offset > 0 ? $this->cache->get($cacheKey) : null;
+		if (!is_string($nextPageToken)) {
+			// Memcached answers false for a key it cannot read
+			$nextPageToken = null;
+		}
 
 		if (is_null($nextPageToken) && $offset > 0) {
-			// cache cleared before "Load more" could be clicked.
-			// we can calculate the page no. to set limit (n * $limit) and return the $limit no. of elements
+			// no token: the last page was reached, or the cache lost the token before "load more" was clicked.
+			// for a lost token, we can calculate the page no. to set limit (n * $limit) and return the $limit no. of elements
 			// from the end of the array, but we choose to ignore this since it has very less chance of happening or not at all
-			$this->logger->info('Memory cache cleared, could not get the nextPageToken to get the next page of the search results', ['app' => Application::APP_ID]);
+			$this->logger->info('No page token to get the next page of the search results with, the last page was reached or the cache lost it', ['app' => Application::APP_ID]);
 			return SearchResult::complete($this->getName(), []);
 		}
 
-		$searchResult = $this->service->search($term, $type, $limit, $nextPageToken);
-		$this->cache->set($userId . $term, $searchResult['nextPageToken'], 60 * 60);
+		try {
+			$searchResult = $this->service->search($term, $type, $limit, $nextPageToken);
+		} catch (RuntimeException $e) {
+			// no results instead of a server error
+			return SearchResult::complete($this->getName(), []);
+		}
 
 		$formattedResults = array_map(function (SearchResultItem $entry): SearchResultEntry {
 			return new SearchResultEntry(
@@ -115,10 +131,17 @@ abstract class YoutubeBaseSearchProvider implements IExternalProvider {
 			);
 		}, $searchResult['results']);
 
+		if ($searchResult['nextPageToken'] === null) {
+			// the last page, so there is no more to load
+			$this->cache->remove($cacheKey);
+			return SearchResult::complete($this->getName(), $formattedResults);
+		}
+		$this->cache->set($cacheKey, $searchResult['nextPageToken'], 60 * 60);
+
 		return SearchResult::paginated(
 			$this->getName(),
 			$formattedResults,
-			intval($offset) + $limit,
+			$offset + $limit,
 		);
 	}
 

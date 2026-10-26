@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Keep the YouTube API key out of the log when a request to YouTube fails
+- Show the results of a video search that YouTube answers with a channel among the videos
+- Show apostrophes and ampersands in the titles of videos and playlists in search results instead of their HTML codes
+- Answer a YouTube search with no results instead of a server error when a request to YouTube fails, for example with an invalid API key
+- Show the next page of the same YouTube search on "load more", and start a repeated search at its first page
 
 ## 0.7.2 - 2026-10-14
 
