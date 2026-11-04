@@ -25,7 +25,7 @@ OC.L10N.register(
     "Create credentials for Public Data usage" : "Vytvorte poverenia na používanie verejných údajov",
     "YouTube API Key" : "Kľúč API YouTube",
     "YouTube user options saved" : "Možnosti používateľa YouTube boli uložené",
-    "Failed to save YouTube user options" : "Nepodarilo sa uložiť možnosti používateľa YouTube",
+    "Failed to save YouTube user options" : "Nepodarilo sa uložiť používateľské nastavenia YouTube",
     "Enable searching for YouTube videos/channels/playlists" : "Povoliť vyhľadávanie videí, kanálov a zoznamov videí YouTube",
     "Warning, everything you type in the search bar will be sent to YouTube." : "Upozornenie: všetko, čo zadáte do vyhľadávacieho poľa, sa odošle službe YouTube.",
     "No video reference found" : "Nenašiel sa odkaz na video"
